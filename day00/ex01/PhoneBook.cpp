@@ -6,7 +6,7 @@
 /*   By: abayar <abayar@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/22 12:02:35 by abayar            #+#    #+#             */
-/*   Updated: 2022/08/29 17:09:41 by abayar           ###   ########.fr       */
+/*   Updated: 2022/08/30 12:22:36 by abayar           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,34 +16,29 @@ std::string	read_line(std::string str, std::string res)
 {
 	std::cout << str << ": ";
 	std::getline(std::cin, res);
+	if (res.empty())
+	{
+		std::cout << "exit\n";
+		exit(0);
+	}
 	return (res);
 }
 
-void	Contact::display(int i)
+void	display(PhoneBook *x, int j)
 {
-	if (this->firstname.length() >= 10)
-		std::cout << this->firstname.substr(0,9) << ".|";
-	else
+	std::string	i;
+
+	i = read_line("Enter the index of the contact you want to display", i);
+	if (i[0] >= '1' && i[0] <= '8' && i.length() == 1)
 	{
-		std::cout << std::setw(10);
-		std::cout << this->firstname << "|";
-	}	
-	if (this->lastname.length() >= 10)
-		std::cout << this->lastname.substr(0,9) << ".|";
+		if ((i[0] - 48) > j)
+			std::cout << "No Contact yet in this index." << std::endl;
+		else
+			x->con[(i[0] - 49)].search();
+	}
 	else
-		std::cout << std::setw(10) << this->lastname << "|";
-	if (this->nickname.length() >= 10)
-		std::cout << this->nickname.substr(0,9) << ".|";
-	else
-		std::cout << std::setw(10) << this->nickname << "|";
-	if (this->pnum.length() >= 10)
-		std::cout << this->pnum.substr(0,9) << ".|";
-	else
-		std::cout << std::setw(10) << this->pnum << "|";
-	if (this->secret.length() >= 10)
-		std::cout << this->secret.substr(0,9) << ".|";
-	else
-		std::cout << std::setw(10) << this->secret << std::endl;
+		std::cout << "Error: The index is unavailable." << std::endl;
+	
 }
 
 int main(void)
@@ -65,12 +60,12 @@ int main(void)
 		std::cout << "***      'ADD' to add a new contact       ***" << std::endl;
 		std::cout << "** 'SEARCH' to display a  specific contact **" << std::endl;
 		std::cout << "***      'EXIT' to exit the program       ***" << std::endl;
-		std::getline(std::cin, line);
+		line = read_line("<ˀ.ˀ>--> ", line);
 		if (i > 7)
 			i = 0;
 		if (line.compare("EXIT") == 0)
 			exit(0);
-		if (line.compare("ADD") == 0)
+		else if (line.compare("ADD") == 0)
 		{
 			vfirstname = read_line("Entre your first name", vfirstname);
 			vlastname = read_line("Entre your last name", vlastname);
@@ -81,20 +76,25 @@ int main(void)
 			i++;
 			j++;
 		}
-		if (line.compare("SEARCH") == 0)
+		else if (line.compare("SEARCH") == 0)
 		{
 			if (j == 0)
 				std::cout << "No contact added yet.\n";
 			else
 			{
+				std::cout << "     index|      name|  lastname| "<< \
+				" nickname|  phonenum|darcksecret\n";
 				while (c < j && c < 8)
 				{
 					x.con[c].display(c);
 					c++;					
 				}
+				display(&x, j);
 				c = 0;
 			}
 		}
+		else
+			std::cout << "Error: " << line << " command not found." << std::endl;
 	}
 	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: abayar <abayar@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/28 15:20:03 by abayar            #+#    #+#             */
-/*   Updated: 2022/08/29 16:29:06 by abayar           ###   ########.fr       */
+/*   Updated: 2022/08/30 12:04:00 by abayar           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ class Contact {
 			std::string pnum,
 			std::string secret);
 		void	exit();
-		void	search(int i);
+		void	search();
 		void	display(int i);
 };
 

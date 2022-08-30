@@ -6,15 +6,15 @@
 #    By: abayar <abayar@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/08/22 11:51:29 by abayar            #+#    #+#              #
-#    Updated: 2022/08/30 12:08:16 by abayar           ###   ########.fr        #
+#    Updated: 2022/08/30 12:52:23 by abayar           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 SRC = megaphone.cpp
 
-NAME = Megaphone
+NAME = megaphone
 
-FLAG = g++ -Wall -Wextra -Werror
+FLAG = g++ -Wall -Wextra -Werror -std=c++98
 
 all : ${NAME}
 
@@ -22,7 +22,7 @@ ${NAME} :
 	@${FLAG} ${SRC} -o ${NAME}
 
 clean : 
-	@ rm -f Megaphone
+	@ rm -f ${NAME}
 fclean : clean
 
 re : fclean all

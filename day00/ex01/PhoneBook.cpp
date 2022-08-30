@@ -6,7 +6,7 @@
 /*   By: abayar <abayar@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/22 12:02:35 by abayar            #+#    #+#             */
-/*   Updated: 2022/08/30 12:22:36 by abayar           ###   ########.fr       */
+/*   Updated: 2022/08/30 13:07:40 by abayar           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,10 +16,10 @@ std::string	read_line(std::string str, std::string res)
 {
 	std::cout << str << ": ";
 	std::getline(std::cin, res);
-	if (res.empty())
-	{
-		std::cout << "exit\n";
-		exit(0);
+	if (std::cin.eof() == 1) {
+		std::clearerr(stdin);
+		std::cin.clear();
+		std::cout << std::endl;
 	}
 	return (res);
 }
@@ -72,6 +72,11 @@ int main(void)
 			vnickname = read_line("Entre your nick name", vnickname);
 			vpnum = read_line("Entre your phone number", vpnum);
 			vsecret = read_line("Entre your darkest secret", vsecret);
+			if (vfirstname.empty() || vlastname.empty() || vnickname.empty() || vpnum.empty() || vsecret.empty())
+			{
+				std::cout << "Error: Adding failed.\n";
+				continue ;
+			}
 			x.con[i].add(vfirstname, vlastname, vnickname, vpnum, vsecret);
 			i++;
 			j++;

@@ -6,7 +6,7 @@
 /*   By: abayar <abayar@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/28 15:32:43 by abayar            #+#    #+#             */
-/*   Updated: 2022/08/30 12:22:32 by abayar           ###   ########.fr       */
+/*   Updated: 2022/08/30 13:09:07 by abayar           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,11 +23,11 @@ void    Contact::add(std::string firstname, std::string lastname, std::string ni
 
 void	Contact::search()
 {
-	std::cout << "First name  :" << this->firstname << std::endl;
-	std::cout << "Last name   :" << this->lastname << std::endl;
-	std::cout << "Nickname    :" << this->nickname << std::endl;
-	std::cout << "Phone number:" << this->pnum << std::endl;
-	std::cout << "darksecret  :" << this->secret << std::endl;
+	std::cout << "First name  :  " << this->firstname << std::endl;
+	std::cout << "Last name   :  " << this->lastname << std::endl;
+	std::cout << "Nickname    :  " << this->nickname << std::endl;
+	std::cout << "Phone number:  " << this->pnum << std::endl;
+	std::cout << "darksecret  :  " << this->secret << std::endl;
 }
 
 void	Contact::display(int i)

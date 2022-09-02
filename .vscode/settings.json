@@ -55,6 +55,8 @@
         "compare": "cpp",
         "concepts": "cpp",
         "iomanip": "cpp",
-        "variant": "cpp"
+        "variant": "cpp",
+        "__split_buffer": "cpp",
+        "vector": "cpp"
     }
 }

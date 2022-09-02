@@ -1,33 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Zombie.cpp                                         :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: abayar <abayar@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/01 13:10:02 by abayar            #+#    #+#             */
-/*   Updated: 2022/09/01 14:44:17 by abayar           ###   ########.fr       */
+/*   Created: 2022/09/01 14:34:23 by abayar            #+#    #+#             */
+/*   Updated: 2022/09/01 14:47:14 by abayar           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Zombie.hpp"
 
-Zombie::Zombie( std::string name )
+int	main( void )
 {
-    this->name = name;
-}
-
-Zombie::~Zombie( void )
-{
-    std::cout << this->getname() << " is dead." << std::endl;
-}
-
-void    Zombie::announce( void )
-{
-    std::cout << this->name << ": BraiiiiiiinnnzzzZ..." << std::endl;
-}
-
-std::string Zombie::getname( void )
-{
-    return (this->name);
+	std::cout << "Creating the first Zombie, Ali" << std::endl;
+	Zombie	ali = Zombie("Ali");
+	ali.announce();
+	std::cout << "Creating the second Zombie, floki, using the function newZombie"<< std::endl;
+    Zombie	*floki = newZombie("floki");
+	floki->announce();
+	delete floki;
+	std::cout << "Creating the third Zombie, Mark, using the function randomChump"<< std::endl;
+	randomChump("Mark");
 }

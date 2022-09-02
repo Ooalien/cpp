@@ -1,33 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Zombie.cpp                                         :+:      :+:    :+:   */
+/*   zombieHorde.cpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: abayar <abayar@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/01 13:10:02 by abayar            #+#    #+#             */
-/*   Updated: 2022/09/02 10:24:20 by abayar           ###   ########.fr       */
+/*   Created: 2022/09/02 10:28:37 by abayar            #+#    #+#             */
+/*   Updated: 2022/09/02 10:46:30 by abayar           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Zombie.hpp"
 
-Zombie::Zombie( std::string name )
+Zombie* zombieHorde( int N, std::string name )
 {
-    this->name = name;
-}
+    Zombie  *zz;
 
-Zombie::~Zombie( void )
-{
-    std::cout << this->getname() << " is dead." << std::endl;
-}
-
-void    Zombie::announce( void )
-{
-    std::cout << this->name << ": BraiiiiiiinnnzzzZ..." << std::endl;
-}
-
-std::string Zombie::getname( void )
-{
-    return (this->name);
+    zz = new Zombie [N];
+    for (int i = 0; i < N; i++)
+        zz[i].setname(name);
+    return (zz);
 }

@@ -5,22 +5,29 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: abayar <abayar@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/01 14:34:23 by abayar            #+#    #+#             */
-/*   Updated: 2022/09/02 10:48:33 by abayar           ###   ########.fr       */
+/*   Created: 2022/09/02 12:39:35 by abayar            #+#    #+#             */
+/*   Updated: 2022/09/02 12:40:09 by abayar           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
 
-int	main( void )
+
+int main()
 {
-	std::cout << "Creating the first Zombie, Ali" << std::endl;
-	Zombie	ali = Zombie("Ali");
-	ali.announce();
-	std::cout << "Creating the second Zombie, floki, using the function newZombie"<< std::endl;
-    Zombie	*floki = newZombie("floki");
-	floki->announce();
-	delete floki;
-	std::cout << "Creating the third Zombie, Mark, using the function randomChump"<< std::endl;
-	randomChump("Mark");
+    {
+        Weapon club = Weapon("crude spiked club");
+        HumanA bob("Bob", club);
+        bob.attack();
+        club.setType("some other type of club");
+        bob.attack();
+    }
+    {
+        Weapon club = Weapon("crude spiked club");
+        HumanB jim("Jim");
+        jim.setWeapon(club);
+        jim.attack();
+        club.setType("some other type of club");
+        jim.attack();
+    }
+    return 0;
 }

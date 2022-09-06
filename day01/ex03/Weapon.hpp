@@ -6,7 +6,7 @@
 /*   By: abayar <abayar@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/02 12:42:35 by abayar            #+#    #+#             */
-/*   Updated: 2022/09/02 12:53:05 by abayar           ###   ########.fr       */
+/*   Updated: 2022/09/06 12:43:54 by abayar           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,15 +18,15 @@
 # include <string>
 # include <iomanip>
 
-class Weapon 
+class Weapon
 {
-    private:
-        std::string type;
-    public :
-        Weapon(std::string type);
-        const std::string &getType( void );
-        void    setType(std::string);
-            
+	private:
+		std::string *type;
+	public :
+		Weapon(std::string *type);
+		const std::string &getType( void );
+		void    setType(std::string *type);
+			
 };
 
 

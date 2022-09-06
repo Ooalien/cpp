@@ -6,11 +6,13 @@
 /*   By: abayar <abayar@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/02 12:39:35 by abayar            #+#    #+#             */
-/*   Updated: 2022/09/02 12:40:09 by abayar           ###   ########.fr       */
+/*   Updated: 2022/09/06 12:24:52 by abayar           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-
+#include "Weapon.hpp"
+#include "HumanA.hpp"
+#include "HumanB.hpp"
 
 int main()
 {
@@ -29,5 +31,12 @@ int main()
         club.setType("some other type of club");
         jim.attack();
     }
+    // Weapon ak = Weapon("ak47");
+    // HumanA ali = HumanA("ali", ak);
+    // std::cout << ak.getType() << std::endl;
+    // ak.setType("zerwata");
+    // std::cout << ak.getType() << std::endl;
+    // ali.attack();
+    
     return 0;
 }

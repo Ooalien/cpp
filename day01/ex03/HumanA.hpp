@@ -6,7 +6,7 @@
 /*   By: abayar <abayar@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/02 12:42:24 by abayar            #+#    #+#             */
-/*   Updated: 2022/09/06 12:16:36 by abayar           ###   ########.fr       */
+/*   Updated: 2022/09/07 10:38:32 by abayar           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,10 +18,10 @@
 class HumanA 
 {
 	private:
-		Weapon      *w;
+		Weapon      &w;
 		std::string name;
 	public :
-		HumanA(std::string name, Weapon x);
+		HumanA(std::string name, Weapon &x);
 		~HumanA();
 		void    attack();
 };

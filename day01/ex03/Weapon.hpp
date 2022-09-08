@@ -6,7 +6,7 @@
 /*   By: abayar <abayar@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/02 12:42:35 by abayar            #+#    #+#             */
-/*   Updated: 2022/09/06 13:10:42 by abayar           ###   ########.fr       */
+/*   Updated: 2022/09/07 10:39:33 by abayar           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ class Weapon
 	public :
 		Weapon(std::string type);
 		const std::string &getType( void );
-		void    setType(std::string &type);
+		void    setType(std::string type);
 			
 };
 

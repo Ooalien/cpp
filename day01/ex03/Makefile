@@ -6,11 +6,11 @@
 #    By: abayar <abayar@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/09/06 11:06:51 by abayar            #+#    #+#              #
-#    Updated: 2022/09/06 11:11:20 by abayar           ###   ########.fr        #
+#    Updated: 2022/09/07 10:34:58 by abayar           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-SRC = Weapon.cpp HumanA.cpp HumanA.cpp
+SRC = Weapon.cpp HumanA.cpp HumanB.cpp main.cpp
 
 NAME = program
 

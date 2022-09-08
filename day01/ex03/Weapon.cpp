@@ -6,7 +6,7 @@
 /*   By: abayar <abayar@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/02 12:42:32 by abayar            #+#    #+#             */
-/*   Updated: 2022/09/06 13:12:00 by abayar           ###   ########.fr       */
+/*   Updated: 2022/09/07 10:39:45 by abayar           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ const std::string &Weapon::getType( void )
 	return (this->type);
 }
 
-void    Weapon::setType(std::string &weaponn)
+void    Weapon::setType(std::string weaponn)
 {
 	this->type = weaponn;
 }

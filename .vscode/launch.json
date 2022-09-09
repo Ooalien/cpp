@@ -8,8 +8,8 @@
             "type": "lldb",
             "request": "launch",
             "name": "Debug",
-            "program": "/Users/abayar/Desktop/cpp/day00/ex01/a.out",
-            "args": [],
+            "program": "/Users/abayar/Desktop/cpp/day01/ex04/program",
+            "args": ["Makefile", "NAME", "ali",],
             "cwd": "${workspaceFolder}"
         }
     ]

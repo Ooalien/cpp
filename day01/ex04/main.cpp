@@ -21,23 +21,13 @@ int main(int ac, char **av)
         a.filename = av[1];
         a.find = av[2];
         a.repl = av[3];
-        std::ifstream	readf(a.filename);
-	    std::ofstream	writef(a.filename + ".replace");
-        while (getline(readf, a.line))
+        
+        a.readf.open(a.filename);
+	    a.writef.open(a.filename + ".replace");
+        while (getline(a.readf, a.line))
         {
-            // while (a.index < )
-            // {
-                a.index = a.line.find(av[2]);
-                if (a.index == -1)
-                {    
-                    writef << a.line << std::endl;
-                   continue ;
-                }
-                a.line.erase(a.index, a.find.length());
-                a.line.insert(a.index, av[3]);
-                writef << a.line;
-            // }
-            std::cout << std::endl;
+            a.replacee(&a);
+            a.writef << a.line << std::endl;
         }
         
     }

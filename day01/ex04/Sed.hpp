@@ -22,12 +22,14 @@
 class Sed
 {
 	public:
-		std::string line;
-		std::string find;
-		std::string repl;
-		std::string	filename;
-		int			index;
-		void	replacee( void );
+		std::ifstream	readf;
+		std::ofstream	writef;
+		std::string 	line;
+		std::string 	find;
+		std::string 	repl;
+		std::string		filename;
+		int				index;
+		void	replacee( Sed *a );
 };
 
 #endif

@@ -16,7 +16,7 @@ int main(int ac, char **av)
 {
     Sed a;
     
-    if (ac == 4)
+    if (ac == 4 && av[2][0] != '\0')
     {
         a.filename = av[1];
         a.find = av[2];

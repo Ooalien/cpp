@@ -14,7 +14,7 @@ SRC = main.cpp Sed.cpp
 
 NAME = program
 
-FLAG = g++ -Wall -Wextra -Werror -std=c++98 -g
+FLAG = g++ -Wall -Wextra -Werror -std=c++98
 
 all : ${NAME}
 

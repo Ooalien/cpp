@@ -5,14 +5,14 @@
 #                                                     +:+ +:+         +:+      #
 #    By: abayar <abayar@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2022/09/02 10:51:07 by abayar            #+#    #+#              #
-#    Updated: 2022/09/11 13:35:10 by abayar           ###   ########.fr        #
+#    Created: 2022/09/11 13:48:42 by abayar            #+#    #+#              #
+#    Updated: 2022/09/11 13:51:22 by abayar           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-SRC = main.cpp Zombie.cpp zombieHorde.cpp
+SRC = main.cpp Harl.cpp
 
-NAME = Zombie
+NAME = harlFilter
 
 FLAG = g++ -Wall -Wextra -Werror -std=c++98
 

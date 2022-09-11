@@ -1,25 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Sed.cpp                                            :+:      :+:    :+:   */
+/*   Harl.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: abayar <abayar@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/11 13:23:38 by abayar            #+#    #+#             */
-/*   Updated: 2022/09/11 13:23:45 by abayar           ###   ########.fr       */
+/*   Created: 2022/09/11 13:48:39 by abayar            #+#    #+#             */
+/*   Updated: 2022/09/11 13:49:18 by abayar           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Sed.hpp"
+#ifndef HARL_HPP
+# define HARL_HPP
 
-void	Sed::replacee( Sed *a )
+# include <cstring>
+# include <iostream>
+# include <string>
+# include <iomanip>
+
+class Harl
 {
-    int i;
-    a->index = a->line.find(a->find);
-    if (a->index == -1)
-        return ;
-    a->line.erase(a->index, a->find.length());
-    i = a->index;
-    replacee(a);
-    a->line.insert(i, a->repl);
-}
+	private:
+		void	debug(void);
+		void	info(void);
+		void	warning(void);
+		void	error(void);
+	public:
+		void	complain( std::string level );
+};
+
+#endif

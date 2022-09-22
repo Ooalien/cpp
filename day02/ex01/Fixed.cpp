@@ -13,11 +13,23 @@ Fixed::Fixed(void)
     this->fixvalue = 0;
 }
 
-Fixed::Fixed(Fixed &fix)
+Fixed::Fixed(const Fixed &fix)
 {
     std::cout << "Copy constructor called" << std::endl;
     this->fixvalue = fix.getRawBits();
 }
+
+Fixed::Fixed( int value )
+{
+	std::cout << "Int constructor called" << std::endl;
+	this->fixvalue = value;
+}
+
+Fixed::Fixed( float value )
+{
+	std::cout << "Float constructor called" << std::endl;
+	this->fixvalue = roundf(value);
+}	
 
 Fixed::~Fixed(void)
 {
@@ -34,4 +46,14 @@ void Fixed::setRawBits(int const raw)
 {
 	std::cout << "setRawBits member function called" << std::endl;
 	this->fixvalue = raw;
+}
+
+float   Fixed::toFloat( void ) const
+{
+	// return this->;
+}
+
+std::ostream &operator<<(std::ostream &os, const Fixed &a)
+{
+	// os << a;
 }

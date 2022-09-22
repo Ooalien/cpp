@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Fixed.hpp                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: abayar <abayar@student.42.fr>              +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/09/22 09:56:32 by abayar            #+#    #+#             */
+/*   Updated: 2022/09/22 09:56:33 by abayar           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 
 #ifndef FIXED_HPP
 # define FIXED_HPP
@@ -8,8 +20,6 @@ class Fixed
 {
     public :
         Fixed(void);
-        Fixed(int value);
-        Fixed(float valuee);
         Fixed(Fixed &Fix);
         ~Fixed(void);
         Fixed   &operator=(Fixed const &cpy);

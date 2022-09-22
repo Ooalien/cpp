@@ -5,12 +5,12 @@
 #                                                     +:+ +:+         +:+      #
 #    By: abayar <abayar@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2022/09/22 09:56:27 by abayar            #+#    #+#              #
-#    Updated: 2022/09/22 09:56:28 by abayar           ###   ########.fr        #
+#    Created: 2022/09/16 09:50:38 by abayar            #+#    #+#              #
+#    Updated: 2022/09/16 09:51:04 by abayar           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-SRC = main.cpp Fixed.cpp
+SRC = tests.cpp Account.cpp
 
 NAME = program
 

@@ -14,10 +14,28 @@ class Fixed
         Fixed( const Fixed &Fix );
         ~Fixed( void );
         Fixed   &operator=( Fixed const &cpy );
+        Fixed   operator+( Fixed const &cpy ) const;
+        Fixed   operator-( Fixed const &cpy ) const;
+        Fixed   operator*( Fixed const &cpy ) const;
+        Fixed   operator/( Fixed const &cpy ) const;
+        bool    operator==( Fixed const &cpy ) const ;
+        bool    operator!=( Fixed const &cpy ) const ;
+        bool    operator>( Fixed const &cpy ) const ;
+        bool    operator<( Fixed const &cpy ) const ;
+        bool    operator<=( Fixed const &cpy ) const ;
+        bool    operator>=( Fixed const &cpy ) const ;
+        Fixed   &operator++( void );
+        Fixed	operator++(int);
+        Fixed   &operator--( void );
+        Fixed	operator--(int);
         int     getRawBits( void ) const;
         void    setRawBits( int const raw );
         float   toFloat( void ) const;
         int     toInt( void ) const;
+        static Fixed min(Fixed &a, Fixed &b);
+        static Fixed max(Fixed &a, Fixed &b);
+        static const Fixed min(Fixed const &a, Fixed const &b);
+        static const Fixed max(Fixed const &a, Fixed const &b);
 
     private :
         int                 fixvalue;
@@ -25,6 +43,7 @@ class Fixed
 
 } ;
 
-std::ostream &operator<<(std::ostream &os, const Fixed &a);
+std::ostream    &operator<<(std::ostream &os, const Fixed &a);
+int             power( void );
 
 #endif

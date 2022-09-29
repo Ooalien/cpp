@@ -1,16 +1,16 @@
 # **************************************************************************** #
 #                                                                              #
 #                                                         :::      ::::::::    #
-#    Makefile                                           :+:      :+:    :+:    #
+#    Makfile                                            :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
 #    By: abayar <abayar@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2022/09/29 12:27:55 by abayar            #+#    #+#              #
-#    Updated: 2022/09/29 12:27:56 by abayar           ###   ########.fr        #
+#    Created: 2022/09/29 12:27:58 by abayar            #+#    #+#              #
+#    Updated: 2022/09/29 12:28:24 by abayar           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-SRC = ClapTrap.cpp main.cpp ScavTrap.cpp FragTrap.cpp
+SRC = Animal.cpp main.cpp Cat.cpp Dog.cpp
 
 NAME = program
 

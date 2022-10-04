@@ -1,29 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cat.hpp                                            :+:      :+:    :+:   */
+/*   Dog.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: abayar <abayar@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/29 12:28:31 by abayar            #+#    #+#             */
-/*   Updated: 2022/09/29 19:30:31 by abayar           ###   ########.fr       */
+/*   Created: 2022/09/29 12:32:54 by abayar            #+#    #+#             */
+/*   Updated: 2022/09/29 19:32:04 by abayar           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CAT_HPP
-# define CAT_HPP
+#include "Dog.hpp"
 
-# include "Animal.hpp"
+Dog::Dog()
+{
+    type = "Dog";
+    std::cout << "Default Constractor for Dog called." << std::endl;
+}
 
-class Cat : public Animal {
-    public:
-        Cat(void);
-        Cat(Cat &x);
-        virtual ~Cat(void);
-        virtual void    makeSound(void) const;
+Dog::Dog(Dog &x)
+{
+    *this = x;
+    std::cout << "Copy Constractor for Dog called." << std::endl;
+}
 
-}  ;
+void    Dog::makeSound(void) const
+{
+    std::cout << "Woof Woof...!" << std::endl;
+}
 
-
-
-#endif
+Dog::~Dog()
+{
+    std::cout << "Destractor for Dog called." << std::endl;
+}

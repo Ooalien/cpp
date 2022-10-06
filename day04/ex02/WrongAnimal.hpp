@@ -1,30 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cat.hpp                                            :+:      :+:    :+:   */
+/*   WrongAnimal.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: abayar <abayar@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/29 12:28:31 by abayar            #+#    #+#             */
-/*   Updated: 2022/10/06 12:03:07 by abayar           ###   ########.fr       */
+/*   Created: 2022/09/29 11:59:38 by abayar            #+#    #+#             */
+/*   Updated: 2022/09/29 19:30:23 by abayar           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CAT_HPP
-# define CAT_HPP
+#ifndef WRONGANIMAL_HPP
+# define WRONGANIMAL_HPP
 
-# include "Animal.hpp"
+# include <iostream>
 
-class Cat : public Animal {
+class WrongAnimal {
+    protected:
+        std::string type;
     public:
-        Cat(void);
-        Cat(Cat &x);
-        virtual ~Cat(void);
-        virtual void    makeSound(void) const;
-        virtual Brain *GetBrain() const;
-        virtual void setBrain(Brain * br);
-    private:
-        Brain   *br;
+        WrongAnimal();
+        WrongAnimal(WrongAnimal &x);
+        ~WrongAnimal();
+        WrongAnimal &operator=(WrongAnimal const &x);
+
+        std::string getType(void) const;
+        void makeSound(void) const;
+
 }  ;
 
 

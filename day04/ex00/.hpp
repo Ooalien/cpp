@@ -1,30 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cat.hpp                                            :+:      :+:    :+:   */
+/*   WrongCat.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: abayar <abayar@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/29 12:28:31 by abayar            #+#    #+#             */
-/*   Updated: 2022/10/06 12:03:07 by abayar           ###   ########.fr       */
+/*   Created: 2022/09/29 20:40:22 by abayar            #+#    #+#             */
+/*   Updated: 2022/09/29 20:40:57 by abayar           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CAT_HPP
-# define CAT_HPP
+#ifndef WRONGCAT_HPP
+# define WRONGCAT_HPP
 
-# include "Animal.hpp"
+# include "WrongAnimal.hpp"
 
-class Cat : public Animal {
+class WrongCat : public WrongAnimal {
     public:
-        Cat(void);
-        Cat(Cat &x);
-        virtual ~Cat(void);
-        virtual void    makeSound(void) const;
-        virtual Brain *GetBrain() const;
-        virtual void setBrain(Brain * br);
-    private:
-        Brain   *br;
+        WrongCat(void);
+        WrongCat(WrongCat &x);
+        ~WrongCat(void);
+        void    makeSound(void) const;
+
 }  ;
 
 

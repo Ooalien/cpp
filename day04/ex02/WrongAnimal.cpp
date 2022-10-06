@@ -1,47 +1,49 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.cpp                                         :+:      :+:    :+:   */
+/*   WrongAnimal.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: abayar <abayar@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/29 12:10:44 by abayar            #+#    #+#             */
-/*   Updated: 2022/10/06 11:17:02 by abayar           ###   ########.fr       */
+/*   Updated: 2022/09/29 19:32:21 by abayar           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Animal.hpp"
+#include "WrongAnimal.hpp"
 
-Animal::Animal()
+WrongAnimal::WrongAnimal()
 {
     type = "";
-    std::cout << "Default Constractor for Animal called." << std::endl;
+    std::cout << "Default Constractor for WrongAnimal called." << std::endl;
 }
 
-Animal::Animal(Animal &x)
+WrongAnimal::WrongAnimal(WrongAnimal &x)
 {
     *this = x;
-    std::cout << "Copy Constractor for Animal called." << std::endl;
+    std::cout << "Copy Constractor for WrongAnimal called." << std::endl;
 }
 
-Animal &Animal::operator=(Animal const &x)
+WrongAnimal &WrongAnimal::operator=(WrongAnimal const &x)
 {
+    WrongAnimal res;
+
     this->type = x.getType();
-    std::cout << "Copy assignement operator for Animal called." << std::endl;
+    std::cout << "Copy assignement operator for WrongAnimal called." << std::endl;
     return (*this);
 }
 
-void    Animal::makeSound(void) const
+void    WrongAnimal::makeSound(void) const
 {
-    std::cout << "??? unkown animal." << std::endl;
+    std::cout << "??? unkown Wronganimal." << std::endl;
 }
 
-std::string Animal::getType(void) const
+std::string WrongAnimal::getType(void) const
 {
     return (this->type);
 }
 
-Animal::~Animal()
+WrongAnimal::~WrongAnimal()
 {
-    std::cout << "Destractor for Animal called." << std::endl;
+    std::cout << "Destractor for WrongAnimal called." << std::endl;
 }

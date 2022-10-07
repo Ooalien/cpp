@@ -6,7 +6,7 @@
 /*   By: abayar <abayar@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/29 12:32:54 by abayar            #+#    #+#             */
-/*   Updated: 2022/10/06 11:58:00 by abayar           ###   ########.fr       */
+/*   Updated: 2022/10/07 16:28:19 by abayar           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,15 +29,7 @@ void    Dog::makeSound(void) const
     std::cout << "Woof Woof...!" << std::endl;
 }
 
-Brain *Dog::GetBrain() const
-{
-    return this->br;
-}
-
-void Dog::setBrain(Brain * br)
-{
-    this->br = br;
-}
+ç
 
 Dog::~Dog()
 {

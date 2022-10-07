@@ -6,7 +6,7 @@
 /*   By: abayar <abayar@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/11 18:31:43 by abayar            #+#    #+#             */
-/*   Updated: 2022/09/11 19:00:01 by abayar           ###   ########.fr       */
+/*   Updated: 2022/10/07 11:40:37 by abayar           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -122,5 +122,5 @@ void	Account::displayStatus(void) const
 
 void	Account::_displayTimestamp(void)
 {
-	std::cout << "[19920104_091532] ";
+	std::cout << "[" << time(NULL) << "] "; 
 }

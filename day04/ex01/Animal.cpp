@@ -6,7 +6,7 @@
 /*   By: abayar <abayar@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/29 12:10:44 by abayar            #+#    #+#             */
-/*   Updated: 2022/10/06 11:17:02 by abayar           ###   ########.fr       */
+/*   Updated: 2022/10/07 16:28:43 by abayar           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,16 @@ Animal &Animal::operator=(Animal const &x)
     this->type = x.getType();
     std::cout << "Copy assignement operator for Animal called." << std::endl;
     return (*this);
+}
+
+Brain *Animal::GetBrain() const
+{
+    return this->br;
+}
+
+void Animal::setBrain(Brain * br)
+{
+    this->br = br;
 }
 
 void    Animal::makeSound(void) const

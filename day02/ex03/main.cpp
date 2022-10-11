@@ -6,7 +6,7 @@
 /*   By: abayar <abayar@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/22 09:59:56 by abayar            #+#    #+#             */
-/*   Updated: 2022/10/11 21:17:59 by abayar           ###   ########.fr       */
+/*   Updated: 2022/10/12 00:48:50 by abayar           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ int main( void ) {
     const Point a(0.0 , 0.0);
     const Point b(10.0 , 30.0);
     const Point c(20.0 , 0.0);
-    const Point p(10.0 , 15.0);
+    const Point p(0.0 , 0.0);
     
     std::cout << "a  :->> " << a.getx() << " " << a.gety() << std::endl;
     std::cout << "b  :->> " << b.getx() << " " << b.gety() << std::endl;

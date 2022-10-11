@@ -6,7 +6,7 @@
 /*   By: abayar <abayar@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/11 21:05:28 by abayar            #+#    #+#             */
-/*   Updated: 2022/10/11 21:30:39 by abayar           ###   ########.fr       */
+/*   Updated: 2022/10/12 00:46:59 by abayar           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 float area(Point const a, Point const b, Point const c)
 {
-    // the aria of triangle Ax(By - Cy) + Bx(Cy - Ay) + Cx(Ay - By) 
-   return abs(((a.getx() * (b.gety() - c.gety()) + b.getx() * (c.gety() - a.gety()) + c.getx() * (a.gety() - b.gety()) / 2)).toFloat());
+    // the aria of triangle Ax(By - Cy) + Bx(Cy - Ay) + Cx(Ay - By)
+   return abs(((a.getx() * (b.gety() - c.gety()) + b.getx() * (c.gety() - a.gety()) + c.getx() * (a.gety() - b.gety()))).toFloat() / 2);
 }
 
 bool	bsp( Point const a, Point const b, Point const c, Point const point)

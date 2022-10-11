@@ -1,4 +1,24 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Fixed.cpp                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: abayar <abayar@student.42.fr>              +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/10/11 12:05:19 by abayar            #+#    #+#             */
+/*   Updated: 2022/10/11 20:54:14 by abayar           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "Fixed.hpp"
+
+int	power( void )
+{
+	int i = 2;
+	for (int j = 1;j < 8; j++)
+		i*=2;
+	return i;
+}
 
 Fixed &Fixed::operator=(Fixed const &cpy)
 {
@@ -22,13 +42,13 @@ Fixed::Fixed(const Fixed &fix)
 Fixed::Fixed( int value )
 {
 	std::cout << "Int constructor called" << std::endl;
-	this->fixvalue = value * pow(2, 8);
+	this->fixvalue = value * power();
 }
 
 Fixed::Fixed( float value )
 {
 	std::cout << "Float constructor called" << std::endl;
-	this->fixvalue = value * pow(2, 8);
+	this->fixvalue = roundf(value * power());
 }
 
 Fixed::~Fixed(void)
@@ -48,12 +68,12 @@ void Fixed::setRawBits(int const raw)
 
 float   Fixed::toFloat( void ) const
 {
-	return ((float)(this->fixvalue / pow(2, 8)));
+	return ((float)this->fixvalue / power());
 }
 
 int   Fixed::toInt( void ) const
 {
-	return this->fixvalue / pow(2, 8);
+	return this->fixvalue / power();
 }
 
 std::ostream &operator<<(std::ostream &os, const Fixed &a)

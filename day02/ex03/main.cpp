@@ -5,20 +5,27 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: abayar <abayar@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/11 13:26:22 by abayar            #+#    #+#             */
-/*   Updated: 2022/10/09 13:12:16 by abayar           ###   ########.fr       */
+/*   Created: 2022/09/22 09:59:56 by abayar            #+#    #+#             */
+/*   Updated: 2022/10/11 21:17:59 by abayar           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Harl.hpp"
 
-int main()
-{
-    Harl a;
-    std::string choses[] = {"DEBUG", "INFO", "WARNING", "ERROR"};
 
-    for (int i = 0; i < 4; i++)
-        a.complain(choses[i]);
-    // a.complain("Dfdfe");
-    return (0);
+#include "Point.hpp"
+#include <iostream>
+
+int main( void ) {
+    const Point a(0.0 , 0.0);
+    const Point b(10.0 , 30.0);
+    const Point c(20.0 , 0.0);
+    const Point p(10.0 , 15.0);
+    
+    std::cout << "a  :->> " << a.getx() << " " << a.gety() << std::endl;
+    std::cout << "b  :->> " << b.getx() << " " << b.gety() << std::endl;
+    std::cout << "c  :->> " << c.getx() << " " << c.gety() << std::endl;
+    std::cout << "p  :->> " << p.getx() << " " << p.gety() << std::endl;
+    std::cout << (bsp(a, b, c, p) ? "True" : "False") << std::endl;
+    
+    return 0;
 }

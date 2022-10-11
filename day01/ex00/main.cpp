@@ -6,7 +6,7 @@
 /*   By: abayar <abayar@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/01 14:34:23 by abayar            #+#    #+#             */
-/*   Updated: 2022/09/02 10:48:33 by abayar           ###   ########.fr       */
+/*   Updated: 2022/10/08 11:33:03 by abayar           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,11 +16,11 @@ int	main( void )
 {
 	std::cout << "Creating the first Zombie, Ali" << std::endl;
 	Zombie	ali = Zombie("Ali");
-	ali.announce();
 	std::cout << "Creating the second Zombie, floki, using the function newZombie"<< std::endl;
     Zombie	*floki = newZombie("floki");
+	std::cout << "Creating the third Zombie, Mark, using the function randomChump"<< std::endl;
+	randomChump("Dolly");
+	ali.announce();
 	floki->announce();
 	delete floki;
-	std::cout << "Creating the third Zombie, Mark, using the function randomChump"<< std::endl;
-	randomChump("Mark");
 }

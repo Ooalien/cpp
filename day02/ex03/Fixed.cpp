@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: abayar <abayar@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/11 12:05:01 by abayar            #+#    #+#             */
-/*   Updated: 2022/10/11 20:57:02 by abayar           ###   ########.fr       */
+/*   Created: 2022/10/11 12:04:53 by abayar            #+#    #+#             */
+/*   Updated: 2022/10/11 21:00:38 by abayar           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,38 +22,38 @@ int	power( void )
 
 Fixed &Fixed::operator=(Fixed const &cpy)
 {
-	std::cout << "Copy assignation operator called" << std::endl;
+	// std::cout << "Copy assignation operator called" << std::endl;
 	this->fixvalue = cpy.getRawBits();
 	return (*this);
 }
 
 Fixed::Fixed(void)
 {
-    std::cout << "Default constructor called" << std::endl;
+    // std::cout << "Default constructor called" << std::endl;
     this->fixvalue = 0;
 }
 
 Fixed::Fixed(const Fixed &fix)
 {
-    std::cout << "Copy constructor called" << std::endl;
+    // std::cout << "Copy constructor called" << std::endl;
     this->fixvalue = fix.getRawBits();
 }
 
 Fixed::Fixed( int value )
 {
-	std::cout << "Int constructor called" << std::endl;
+	// std::cout << "Int constructor called" << std::endl;
 	this->fixvalue = value * power();
 }
 
 Fixed::Fixed( float value )
 {
-	std::cout << "Float constructor called" << std::endl;
+	// std::cout << "Float constructor called" << std::endl;
 	this->fixvalue = roundf(value * power());
 }
 
 Fixed::~Fixed(void)
 {
-    std::cout << "Destructor called" << std::endl;
+    // std::cout << "Destructor called" << std::endl;
 }
 
 int Fixed::getRawBits(void) const

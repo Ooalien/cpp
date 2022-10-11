@@ -5,12 +5,12 @@
 #                                                     +:+ +:+         +:+      #
 #    By: abayar <abayar@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2022/10/11 12:05:26 by abayar            #+#    #+#              #
-#    Updated: 2022/10/11 12:05:27 by abayar           ###   ########.fr        #
+#    Created: 2022/10/11 12:04:47 by abayar            #+#    #+#              #
+#    Updated: 2022/10/11 21:08:36 by abayar           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-SRC = main.cpp Fixed.cpp
+SRC = main.cpp Fixed.cpp Point.cpp bsp.cpp
 
 NAME = program
 

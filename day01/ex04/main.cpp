@@ -6,7 +6,7 @@
 /*   By: abayar <abayar@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/08 11:40:03 by abayar            #+#    #+#             */
-/*   Updated: 2022/09/08 13:07:03 by abayar           ###   ########.fr       */
+/*   Updated: 2022/10/09 12:03:32 by abayar           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,13 +23,17 @@ int main(int ac, char **av)
         a.repl = av[3];
         
         a.readf.open(a.filename);
+        if (a.readf.fail())
+        {
+            std::cout << "Error: while opening readfile." << std::endl;
+            return (0);
+        }
 	    a.writef.open(a.filename + ".replace");
         while (getline(a.readf, a.line))
         {
             a.replacee(&a);
             a.writef << a.line << std::endl;
         }
-        
     }
     else
         std::cout << "Error: bad params." << std::endl;

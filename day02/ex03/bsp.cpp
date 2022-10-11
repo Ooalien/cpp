@@ -6,7 +6,7 @@
 /*   By: abayar <abayar@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/11 21:05:28 by abayar            #+#    #+#             */
-/*   Updated: 2022/10/12 00:46:59 by abayar           ###   ########.fr       */
+/*   Updated: 2022/10/12 00:51:21 by abayar           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,6 @@ bool	bsp( Point const a, Point const b, Point const c, Point const point)
     std::cout << a << " " << b << " " << c << " " << point << std::endl;
     std::cout << A << " " << A1 << " " << A2 << " " << A3 << std::endl;
     
-    return (A == A1 + A2 + A3);
+    return ((A == A1 + A2 + A3) && A2 && A1 && A3);
    
 }

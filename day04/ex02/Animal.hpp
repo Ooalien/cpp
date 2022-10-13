@@ -6,7 +6,7 @@
 /*   By: abayar <abayar@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/29 11:59:38 by abayar            #+#    #+#             */
-/*   Updated: 2022/10/06 11:58:55 by abayar           ###   ########.fr       */
+/*   Updated: 2022/10/07 16:29:16 by abayar           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,17 +19,16 @@
 class Animal {
     protected:
         std::string type;
+        
     public:
         Animal();
         Animal(Animal &x);
         virtual ~Animal();
-        Animal &operator=(Animal const &x);
+        virtual Animal &operator=(Animal const &x) = 0;
 
         std::string getType(void) const;
-        virtual void makeSound(void) const;
+        virtual void makeSound(void) const = 0;
         virtual Brain *GetBrain() const = 0;
-        virtual void setBrain(Brain * br) = 0;
-
 
 }  ;
 

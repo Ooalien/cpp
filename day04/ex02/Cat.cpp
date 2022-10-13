@@ -15,6 +15,7 @@
 Cat::Cat()
 {
     type = "Cat";
+    br = new Brain();
     std::cout << "Default Constractor for Cat called." << std::endl;
 }
 
@@ -27,6 +28,7 @@ Cat::Cat(Cat &x)
 Cat::~Cat()
 {
     std::cout << "Destractor for Cat called." << std::endl;
+    delete br;
 }
 
 Brain *Cat::GetBrain() const
@@ -42,4 +44,19 @@ void Cat::setBrain(Brain * br)
 void    Cat::makeSound(void) const
 {
     std::cout << "Meaw Meaw...!" << std::endl;
+}
+
+Animal &Cat::operator=(Animal const &x)
+{
+    this->type = x.getType();
+    std::cout << "Copy assignement operator for Animal called." << std::endl;
+    return (*this);
+}
+
+Cat		&Cat::operator=( Cat const &cat )
+{
+	std::cout << "Assignement operator for Cat called" << std::endl;
+	this->type = cat.getType();
+	*(this->br) = *(cat.GetBrain());
+	return *this;
 }

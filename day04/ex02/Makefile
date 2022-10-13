@@ -10,7 +10,7 @@
 #                                                                              #
 # **************************************************************************** #
 
-SRC = Animal.cpp main.cpp Cat.cpp Dog.cpp WrongAnimal.cpp WrongCat.cpp Brain.cpp
+SRC = Animal.cpp main.cpp Cat.cpp Dog.cpp Brain.cpp
 
 NAME = program
 

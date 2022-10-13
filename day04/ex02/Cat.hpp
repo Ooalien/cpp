@@ -23,6 +23,8 @@ class Cat : public Animal {
         virtual void    makeSound(void) const;
         virtual Brain *GetBrain() const;
         virtual void setBrain(Brain * br);
+        virtual Animal &operator=(Animal const &x);
+        Cat		&operator=( Cat const &cat );
     private:
         Brain   *br;
 }  ;

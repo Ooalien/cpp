@@ -11,31 +11,43 @@
 /* ************************************************************************** */
 
 #include "Animal.hpp"
-#include "WrongAnimal.hpp"
 #include "Dog.hpp"
 #include "Cat.hpp"
-#include "WrongCat.hpp"
 
 int main()
 {
-    Animal* j = new Dog();
-    Animal* i = new Cat();
-    
-    Brain *brain = new Brain();
-    brain->ideas[0] = "hello .";
-    brain->ideas[1] = "my name is brad";
-    brain->ideas[2] = "i want to eat";
-    brain->ideas[3] = "walk pleaase";
-    brain->ideas[4] = "woof woof thanks";
+    Animal *t[8];
 
-    j->setBrain(brain);
-    int x=0;
-    while(x < 5)
-        std::cout << j->getType() << " -> " << j->GetBrain()->ideas[x++]<<std::endl;
-    
-    delete brain;
-    delete j;
-    delete i;
-    
+    for (int i = 0 ; i < 8; i++)
+    {
+        if ( i < 4)
+            t[i] = new Cat();
+        else
+            t[i] = new Dog();
+    }
+    for (int i = 0 ; i < 8; i++)
+    {
+        Brain *brain = t[i]->GetBrain();
+        std::string x = ((std::string)"Im happy " + ((t[i]->getType() == "Cat")?(std::string)"Cat":(std::string)"Dog"));
+        brain->ideas[0] = x;
+        brain->ideas[1] = ((t[i]->getType() == "Cat")?"Meow Meow":"Woof Woof");
+        brain->ideas[2] = "I don't bite";
+        brain->ideas[3] = "But";
+        brain->ideas[4] = "My mom does x'D";
+    }
+    for (int i = 0 ; i < 8; i++)
+    {
+        std::cout << " ---------- Animal nbr " << i+1 << " ----------" << std::endl;
+        std::cout << t[i]->GetBrain()->ideas[0] << std::endl;
+        std::cout << t[i]->GetBrain()->ideas[1] << std::endl;
+        std::cout << t[i]->GetBrain()->ideas[2] << std::endl;
+        std::cout << t[i]->GetBrain()->ideas[3] << std::endl;
+        std::cout << t[i]->GetBrain()->ideas[4] << std::endl;
+    }
+    for (int i = 0 ; i < 8; i++)
+    {
+        delete t[i];
+    }
+
     return 0;
 }

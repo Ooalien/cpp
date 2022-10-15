@@ -15,6 +15,7 @@
 Dog::Dog()
 {
     type = "Dog";
+    br = new Brain();
     std::cout << "Default Constractor for Dog called." << std::endl;
 }
 
@@ -29,9 +30,18 @@ void    Dog::makeSound(void) const
     std::cout << "Woof Woof...!" << std::endl;
 }
 
-ç
+Brain *Dog::GetBrain() const
+{
+    return this->br;
+}
+
+void Dog::setBrain(Brain * br)
+{
+    this->br = br;
+}
 
 Dog::~Dog()
 {
     std::cout << "Destractor for Dog called." << std::endl;
+    delete br;
 }

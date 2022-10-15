@@ -15,6 +15,7 @@
 Cat::Cat()
 {
     type = "Cat";
+    br = new Brain();
     std::cout << "Default Constractor for Cat called." << std::endl;
 }
 
@@ -27,6 +28,7 @@ Cat::Cat(Cat &x)
 Cat::~Cat()
 {
     std::cout << "Destractor for Cat called." << std::endl;
+    delete br;
 }
 
 Brain *Cat::GetBrain() const

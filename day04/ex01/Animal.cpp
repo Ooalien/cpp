@@ -31,16 +31,6 @@ Animal &Animal::operator=(Animal const &x)
     return (*this);
 }
 
-Brain *Animal::GetBrain() const
-{
-    return this->br;
-}
-
-void Animal::setBrain(Brain * br)
-{
-    this->br = br;
-}
-
 void    Animal::makeSound(void) const
 {
     std::cout << "??? unkown animal." << std::endl;

@@ -1,31 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   AMateria.hpp                                       :+:      :+:    :+:   */
+/*   AMateria.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: abayar <abayar@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/15 13:57:12 by abayar            #+#    #+#             */
-/*   Updated: 2022/10/15 14:00:04 by abayar           ###   ########.fr       */
+/*   Created: 2022/10/15 14:01:51 by abayar            #+#    #+#             */
+/*   Updated: 2022/10/15 14:05:31 by abayar           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef AMATERIA_HPP
-# define AMATERIA_HPP
+#include "AMateria.hpp"
 
-# include <iostream>
-# include "ICharacter.hpp"
-
-class AMateria
+AMateria(std::string const & type)
 {
-protected:
-    std::string type;
-public:
-    AMateria(std::string const & type);
+    std::cout << "Constractor AMateria Called" << std::endl;
+}
 
-    std::string const & getType() const; //Returns the materia type
-    virtual AMateria* clone() const = 0;
-    virtual void use(ICharacter& target);
-};
-
-#endif
+std::string const & getType() const
+{
+    return (type);
+}

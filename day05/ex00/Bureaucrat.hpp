@@ -18,18 +18,18 @@
 class  Bureaucrat
 {
 	private :
-		const std::string   name;
-		int                 grade;
+		std::string   name;
+		int           grade;
 	public  :
 		Bureaucrat(const std::string x, int n);
 		Bureaucrat(Bureaucrat &x);
 		~Bureaucrat();
 		
 		Bureaucrat &operator=(Bureaucrat &x);
-		Bureaucrat &operato++(Bureaucrat &x);
-		Bureaucrat &operator--(Bureaucrat &x);
-		Bureaucrat operato++(Bureaucrat &x);
-		Bureaucrat operator--(Bureaucrat &x);
+		Bureaucrat &operator++();
+		Bureaucrat &operator--();
+		Bureaucrat operator++(int);
+		Bureaucrat operator--(int);
 
 		std::string Getname() const;
 		int			Getgrade() const;

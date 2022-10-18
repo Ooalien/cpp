@@ -19,7 +19,7 @@ Bureaucrat::Bureaucrat(const std::string x, int n) : name(x) , grade(n)
 
 Bureaucrat::Bureaucrat(Bureaucrat &x) : name(x.name) , grade(x.grade)
 {
-    std::cout << "Copy constractor is Called" << std::endl;
+    //std::cout << "Copy constractor is Called" << std::endl;
 }
 
 Bureaucrat::~Bureaucrat()
@@ -47,4 +47,30 @@ std::ostream &operator<<(std::ostream &os, const Bureaucrat &x)
 {
     os << x.Getname() << ", Bureaucrat Grade " << x.Getgrade();
     return os;
+}
+
+Bureaucrat &Bureaucrat::operator++(void)
+{
+    this->grade--;
+    return *this;
+}
+
+Bureaucrat &Bureaucrat::operator--(void)
+{
+    this->grade++;
+    return *this;
+}
+
+Bureaucrat Bureaucrat::operator++(int)
+{
+    Bureaucrat cpy((*this));
+    ++(*this);
+    return cpy;
+}
+
+Bureaucrat Bureaucrat::operator--(int)
+{
+    Bureaucrat cpy((*this));
+    --(*this);
+    return cpy;    
 }

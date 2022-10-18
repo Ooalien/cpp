@@ -16,7 +16,10 @@ int main()
 {
     Bureaucrat b("lme3ti", 50);
     
+    --b;
+ 
+ 
 
-    std::cout << b << std::endl;
+    std::cout << --b << std::endl;
     return 0;
 }

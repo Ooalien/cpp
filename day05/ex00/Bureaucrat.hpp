@@ -6,7 +6,7 @@
 /*   By: abayar <abayar@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/15 15:55:49 by abayar            #+#    #+#             */
-/*   Updated: 2022/10/16 15:13:03 by abayar           ###   ########.fr       */
+/*   Updated: 2022/10/18 13:43:34 by abayar           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,22 @@ class  Bureaucrat
 
 		std::string Getname() const;
 		int			Getgrade() const;
+		void		Checkgrade();
 		
+		class GradeTooHighException : public std::exception {
+			public:
+				virtual const char *ex() throw()
+				{
+					return "Exception Grade is Too High.";
+				}
+		};
+		class GradeTooLowException : public std::exception {
+			public:
+				virtual const char *ex() throw()
+				{
+					return "Exception Grade is Too Low.";
+				}
+		};
 } ;
 
 std::ostream &operator<<(std::ostream &os, const Bureaucrat &x);

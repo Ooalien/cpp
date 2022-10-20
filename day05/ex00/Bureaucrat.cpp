@@ -6,7 +6,7 @@
 /*   By: abayar <abayar@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/15 15:55:46 by abayar            #+#    #+#             */
-/*   Updated: 2022/10/16 15:08:17 by abayar           ###   ########.fr       */
+/*   Updated: 2022/10/18 13:44:51 by abayar           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,22 @@
 
 Bureaucrat::Bureaucrat(const std::string x, int n) : name(x) , grade(n)
 {
+    Checkgrade();
     std::cout << "Constractor is Called" << std::endl;
 }
 
 Bureaucrat::Bureaucrat(Bureaucrat &x) : name(x.name) , grade(x.grade)
 {
+    Checkgrade();
     //std::cout << "Copy constractor is Called" << std::endl;
+}
+
+void    Bureaucrat::Checkgrade()
+{
+    if (grade > 150)
+        throw GradeTooLowException();
+    else if (grade < 1)
+        throw GradeTooHighException();
 }
 
 Bureaucrat::~Bureaucrat()

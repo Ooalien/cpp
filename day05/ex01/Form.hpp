@@ -6,7 +6,7 @@
 /*   By: abayar <abayar@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/21 14:44:14 by abayar            #+#    #+#             */
-/*   Updated: 2022/10/21 14:44:48 by abayar           ###   ########.fr       */
+/*   Updated: 2022/10/22 16:16:52 by abayar           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,10 +18,14 @@
 class  Form
 {
 	private :
-		std::string   name;
-		int           grade;
+		std::string	name;
+		int			grade;
+		bool		is_signed;
+		const int	tosigne;
+		const int	toexecute;
+		
 	public  :
-		Form(const std::string x, int n);
+		Form(const std::string x, int n, int s, int e);
 		Form(Form &x);
 		~Form();
 		

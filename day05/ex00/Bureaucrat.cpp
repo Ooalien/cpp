@@ -62,12 +62,14 @@ std::ostream &operator<<(std::ostream &os, const Bureaucrat &x)
 Bureaucrat &Bureaucrat::operator++(void)
 {
     this->grade--;
+    Checkgrade();
     return *this;
 }
 
 Bureaucrat &Bureaucrat::operator--(void)
 {
     this->grade++;
+    Checkgrade();
     return *this;
 }
 
@@ -75,6 +77,7 @@ Bureaucrat Bureaucrat::operator++(int)
 {
     Bureaucrat cpy((*this));
     ++(*this);
+    Checkgrade();
     return cpy;
 }
 
@@ -82,5 +85,6 @@ Bureaucrat Bureaucrat::operator--(int)
 {
     Bureaucrat cpy((*this));
     --(*this);
+    Checkgrade();
     return cpy;    
 }

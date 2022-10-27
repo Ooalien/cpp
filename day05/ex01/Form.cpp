@@ -12,79 +12,106 @@
 
 #include "Form.hpp"
 
-Form::Form(const std::string x, int n) : name(x) , grade(n)
+Form::Form(const std::string x, int n, int tosigne, int toexe) : name(x), grade(n), toexecute(toexe), tosigne(tosigne)
 {
-    Checkgrade();
-    std::cout << "Constractor is Called" << std::endl;
+	this->is_signed = false;
+	Checkgrade();
+	std::cout << "Constractor is Called" << std::endl;
 }
 
-Form::Form(Form &x) : name(x.name) , grade(x.grade)
+Form::Form(Form &x) : name(x.name), grade(x.grade) , toexecute(x.toexecute), tosigne(x.tosigne)
 {
-    Checkgrade();
-    //std::cout << "Copy constractor is Called" << std::endl;
+	this->is_signed = false;
+	Checkgrade();
+	// std::cout << "Copy constractor is Called" << std::endl;
 }
 
-void    Form::Checkgrade()
+void Form::Checkgrade()
 {
-    if (grade > 150)
-        throw GradeTooLowException();
-    else if (grade < 1)
-        throw GradeTooHighException();
+	if (grade > 150)
+		throw GradeTooLowException();
+	else if (grade < 1)
+		throw GradeTooHighException();
 }
 
 Form::~Form()
 {
-    std::cout << "Destractor is Called" << std::endl;
+	std::cout << "Destractor is Called" << std::endl;
 }
 
 Form &Form::operator=(Form &x)
 {
-    this->grade = x.Getgrade();
-    return *this;
+	this->grade = x.Getgrade();
+	return *this;
 }
 
 std::string Form::Getname() const
 {
-    return name;
+	return name;
 }
 
-int	Form::Getgrade() const
+int Form::Getgrade() const
 {
-    return grade;
+	return grade;
 }
 
 std::ostream &operator<<(std::ostream &os, const Form &x)
 {
-    os << x.Getname() << ", Form Grade " << x.Getgrade();
-    return os;
+	os << x.Getname() << ", Form Grade " << x.Getgrade() <<
+		"grade needed to signe it " << x.Gettosigne() << " and " << x.Gettoexec()<<
+		" to execute it." << std::endl;
+	return os;
 }
 
 Form &Form::operator++(void)
 {
-    this->grade--;
-    Checkgrade();
-    return *this;
+	this->grade--;
+	Checkgrade();
+	return *this;
 }
 
 Form &Form::operator--(void)
 {
-    this->grade++;
-    Checkgrade();
-    return *this;
+	this->grade++;
+	Checkgrade();
+	return *this;
 }
 
 Form Form::operator++(int)
 {
-    Form cpy((*this));
-    ++(*this);
-    Checkgrade();
-    return cpy;
+	Form cpy((*this));
+	++(*this);
+	Checkgrade();
+	return cpy;
 }
 
 Form Form::operator--(int)
 {
-    Form cpy((*this));
-    --(*this);
-    Checkgrade();
-    return cpy;    
+	Form cpy((*this));
+	--(*this);
+	Checkgrade();
+	return cpy;
+}
+
+int Form::Gettosigne() const
+{
+	return this->tosigne;
+}
+
+int	Form::Gettoexec() const
+{
+	return this->toexecute;
+}
+
+bool	Form::Getissigne() const
+{
+	return this->is_signed;
+}
+
+void	Form::beSigned(Bureaucrat &x)
+{
+	if (x.Getgrade() > this->Gettosigne())
+		throw GradeTooLowException();
+	else
+		is_signed = true;
 }

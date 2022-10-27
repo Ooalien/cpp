@@ -6,20 +6,20 @@
 /*   By: abayar <abayar@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/21 14:44:16 by abayar            #+#    #+#             */
-/*   Updated: 2022/10/21 14:44:17 by abayar           ###   ########.fr       */
+/*   Updated: 2022/10/27 16:04:10 by abayar           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Form.hpp"
 
-Form::Form(const std::string x, int n, int tosigne, int toexe) : name(x), grade(n), toexecute(toexe), tosigne(tosigne)
+Form::Form(const std::string x, int tosigne, int toexe) : name(x), tosigne(tosigne), toexecute(toexe)
 {
 	this->is_signed = false;
 	Checkgrade();
-	std::cout << "Constractor is Called" << std::endl;
+	// std::cout << "Constractor Form is Called" << std::endl;
 }
 
-Form::Form(Form &x) : name(x.name), grade(x.grade) , toexecute(x.toexecute), tosigne(x.tosigne)
+Form::Form(Form &x) : name(x.name), tosigne(x.tosigne) , toexecute(x.toexecute)
 {
 	this->is_signed = false;
 	Checkgrade();
@@ -36,7 +36,7 @@ void Form::Checkgrade()
 
 Form::~Form()
 {
-	std::cout << "Destractor is Called" << std::endl;
+	// std::cout << "Destractor Form is Called" << std::endl;
 }
 
 Form &Form::operator=(Form &x)
@@ -57,9 +57,9 @@ int Form::Getgrade() const
 
 std::ostream &operator<<(std::ostream &os, const Form &x)
 {
-	os << x.Getname() << ", Form Grade " << x.Getgrade() <<
-		"grade needed to signe it " << x.Gettosigne() << " and " << x.Gettoexec()<<
-		" to execute it." << std::endl;
+	os << x.Getname() << ", Form " << (x.Getissigne()==true?"signed":"not signed") << " Grade " << x.Getgrade() <<
+		" grade needed to signe it " << x.Gettosigne() << " and " << x.Gettoexec()<<
+		" to execute it.";
 	return os;
 }
 
@@ -108,7 +108,7 @@ bool	Form::Getissigne() const
 	return this->is_signed;
 }
 
-void	Form::beSigned(Bureaucrat &x)
+void	Form::beSigned(Bureaucrat x)
 {
 	if (x.Getgrade() > this->Gettosigne())
 		throw GradeTooLowException();

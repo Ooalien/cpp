@@ -6,7 +6,7 @@
 /*   By: abayar <abayar@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/21 14:44:14 by abayar            #+#    #+#             */
-/*   Updated: 2022/10/22 16:16:52 by abayar           ###   ########.fr       */
+/*   Updated: 2022/10/27 16:04:13 by abayar           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,11 +16,12 @@
 # include <iostream>
 # include "Bureaucrat.hpp"
 
+class Bureaucrat;
+
 class  Form
 {
 	private :
 		std::string	name;
-		int			grade;
 		bool		is_signed;
 		const int	tosigne;
 		const int	toexecute;
@@ -43,7 +44,7 @@ class  Form
 		bool		Getissigne() const;
 
 		void		Checkgrade();
-		void		beSigned(Bureaucrat &x);
+		void		beSigned(Bureaucrat x);
 		
 		class GradeTooHighException : public std::exception {
 			public:

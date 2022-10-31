@@ -12,17 +12,19 @@
 
 #include "Bureaucrat.hpp"
 #include "Form.hpp"
+#include "ShrubberyCreationForm.hpp"
 
 int main()
 {
     try
     {
-        Form f("Certif", 10, 5);
+        Form *f = new ShrubberyCreationForm("Home");
         Bureaucrat b("lme3ti", 11);
         std::cout << b << std::endl;
-        f.beSigned(b);
-        std::cout << f << std::endl;
-        b.signForm(f);
+        f->execute(b);
+        // f.beSigned(b);
+        // std::cout << f << std::endl;
+        // b.signForm(f);
         
     }
     catch (std::exception &e)

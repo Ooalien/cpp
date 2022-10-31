@@ -27,7 +27,7 @@ class  Form
 		const int	toexecute;
 		
 	public  :
-		Form(const std::string x, int n, int s, int e);
+		Form(const std::string x, int s, int e);
 		Form(Form &x);
 		~Form();
 		
@@ -38,7 +38,6 @@ class  Form
 		Form operator--(int);
 
 		std::string Getname() const;
-		int			Getgrade() const;
 		int			Gettosigne() const;
 		int			Gettoexec() const;
 		bool		Getissigne() const;
@@ -61,6 +60,16 @@ class  Form
 					return "Exception Grade is Too Low.";
 				}
 		};
+		
+		class GradeTooLowToSigneException : public std::exception {
+			public:
+				virtual const char* what() const throw()
+				{
+					return "Exception Grade is Too Low To Signe It.";
+				}
+		};
+
+
 } ;
 
 std::ostream	&operator<<(std::ostream &os, const Form &x);

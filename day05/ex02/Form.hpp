@@ -14,6 +14,7 @@
 # define FORM_HPP
 
 # include <iostream>
+# include <fstream>
 # include "Bureaucrat.hpp"
 
 class Bureaucrat;
@@ -31,12 +32,6 @@ class  Form
 		Form(Form &x);
 		virtual ~Form();
 		
-		Form &operator=(Form &x);
-		Form &operator++();
-		Form &operator--();
-		Form operator++(int);
-		Form operator--(int);
-
 		std::string Getname() const;
 		int			Gettosigne() const;
 		int			Gettoexec() const;

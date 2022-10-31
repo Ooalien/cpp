@@ -91,7 +91,7 @@ Bureaucrat Bureaucrat::operator--(int)
 
 void		Bureaucrat::signForm(Form &x)
 {
-    if (x.Getgrade() <= x.Gettosigne())
+    if (this->Getgrade() <= x.Gettosigne())
         std::cout << this->name << " signed " << x.Getname() << std::endl;
     else
         std::cout << this->name << " couldn't  sign " << x.Getname() << " because Grade is too low" << std::endl;   

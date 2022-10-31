@@ -26,6 +26,7 @@ ShrubberyCreationForm::~ShrubberyCreationForm()
 
 ShrubberyCreationForm	&ShrubberyCreationForm::operator=(const ShrubberyCreationForm &f)
 {
+    f.Gettosigne();
     return *this;
 }
 
@@ -36,6 +37,41 @@ const std::string &ShrubberyCreationForm::gettarget() const
 
 void	ShrubberyCreationForm::execute(const Bureaucrat &x) const
 {
+    std::ofstream    file;
+    std::string     filename;
 
+    filename = this->target + "_shrubbery";
+    file.open(filename);
+    if (file.fail())
+        std::cout << "Error: while opening file." << std::endl;
+    file << "                                              .         ;  " << std::endl;
+    file << "                 .              .              ;%     ;;   " << std::endl;
+    file << "                   ,           ,                :;%  %;   " << std::endl;
+    file << "                    :         ;                   :;%;'     ., " <<std::endl;  
+    file << "           ,.        %;     %;            ;        %;'    ," << std::endl;;
+    file << "             ;       ;%;  %%;        ,     %;    ;%;    ,%'" << std::endl;
+    file << "              %;       %;%;      ,  ;       %;  ;%;   ,%;' " << std::endl;
+    file << "               ;%;      %;        ;%;        % ;%;  ,%;'" << std::endl;
+    file << "                `%;.     ;%;     %;'         `;%%;.%;'" << std::endl;
+    file << "                 `:;%.    ;%%. %@;        %; ;@%;%'" << std::endl;
+    file << "                    `:%;.  :;bd%;          %;@%;'" << std::endl;
+    file << "                      `@%:.  :;%.         ;@@%;'   " << std::endl;
+    file << "                        `@%.  `;@%.      ;@@%;         " << std::endl;
+    file << "                          `@%%. `@%%    ;@@%;        " << std::endl;
+    file << "                            ;@%. :@%%  %@@%;       " << std::endl;
+    file << "                              %@bd%%%bd%%:;     " << std::endl;
+    file << "                                #@%%%%%:;;" << std::endl;
+    file << "                                %@@%%%::;" << std::endl;
+    file << "                                %@@@%(o);  . '         " << std::endl;
+    file << "                                %@@@o%;:(.,'         " << std::endl;
+    file << "                            `.. %@@@o%::;         " << std::endl;
+    file << "                               `)@@@o%::;         " << std::endl;
+    file << "                                %@@(o)::;        " << std::endl;
+    file << "                               .%@@@@%::;         " << std::endl;
+    file << "                               ;%@@@@%::;.          " << std::endl;
+    file << "                              ;%@@@@%%:;;;. " << std::endl;
+    file << "                          ...;%@@@@@%%:;;;;,.." << std::endl;
+    file.close();
+    std::cout << "Shrubbery Creation -> " << filename << x << std::endl;
 }
 

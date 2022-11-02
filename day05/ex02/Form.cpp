@@ -72,3 +72,9 @@ void	Form::beSigned(Bureaucrat x)
 	else
 		is_signed = true;
 }
+
+void	Form::Checkexec(const Bureaucrat &x) const
+{
+	if (!this->is_signed || this->Gettoexec() < x.Getgrade())
+		throw CantExecuteExeption();
+}

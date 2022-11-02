@@ -13,23 +13,27 @@
 #include "Bureaucrat.hpp"
 #include "Form.hpp"
 #include "ShrubberyCreationForm.hpp"
+#include "RobotomyRequestForm.hpp"
+#include "PresidentialPardonForm.hpp"
 
 int main()
 {
     try
     {
-        Form *f = new ShrubberyCreationForm("Home");
-        Bureaucrat b("lme3ti", 11);
+        Form *f = new PresidentialPardonForm("Home");
+        Form &c = *f;
+        Bureaucrat b("lme3ti", 6);
         std::cout << b << std::endl;
+        b.signForm(*f);
+        f->beSigned(b);
+        std::cout << c << std::endl;
         f->execute(b);
-        // f.beSigned(b);
-        // std::cout << f << std::endl;
-        // b.signForm(f);
-        
+        delete f;
     }
     catch (std::exception &e)
     {
         std::cout << e.what() << std::endl;
+        while(1);
     }
     return 0;
 }

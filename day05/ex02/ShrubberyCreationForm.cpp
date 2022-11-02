@@ -40,6 +40,7 @@ void	ShrubberyCreationForm::execute(const Bureaucrat &x) const
     std::ofstream    file;
     std::string     filename;
 
+    Checkexec(x);
     filename = this->target + "_shrubbery";
     file.open(filename);
     if (file.fail())

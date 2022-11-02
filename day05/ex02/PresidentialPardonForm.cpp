@@ -2,19 +2,19 @@
 #include "PresidentialPardonForm.hpp"
 
 PresidentialPardonForm::PresidentialPardonForm():
-    Form("PresidentialPardonForm", 145, 137), target("")
+    Form("PresidentialPardonForm", 25, 5), target("")
 {
     std::cout << "Default Constractor for PresidentialPardonForm called" << std::endl;
 }
 
 PresidentialPardonForm::PresidentialPardonForm(PresidentialPardonForm &x):
-    Form("PresidentialPardonForm", 145, 137), target(x.target)
+    Form("PresidentialPardonForm", 25, 5), target(x.target)
 {
     std::cout << "Copy Constractor for PresidentialPardonForm called" << std::endl;
 }
 
 PresidentialPardonForm::PresidentialPardonForm(const std::string &target):
-    Form("PresidentialPardonForm", 145, 137), target(target)
+    Form("PresidentialPardonForm", 25, 5), target(target)
 {
     std::cout << "Constractor for PresidentialPardonForm called" << std::endl;
 }
@@ -37,5 +37,6 @@ const std::string &PresidentialPardonForm::gettarget() const
 
 void	PresidentialPardonForm::execute(const Bureaucrat &x) const
 {
-    x.Getgrade();
+    Checkexec(x);
+    std::cout << target << " has been pardoned by Zaphod Beeblebrox." << std::endl;
 }

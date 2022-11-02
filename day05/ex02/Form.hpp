@@ -14,6 +14,8 @@
 # define FORM_HPP
 
 # include <iostream>
+# include <cstdlib>
+# include <ctime>
 # include <fstream>
 # include "Bureaucrat.hpp"
 
@@ -40,6 +42,7 @@ class  Form
 		void		Checkgrade();
 		void		beSigned(Bureaucrat x);
 		virtual void	execute(const Bureaucrat &x) const = 0;
+		void	Checkexec(const Bureaucrat &x) const;
 		
 		class GradeTooHighException : public std::exception {
 			public:
@@ -57,11 +60,11 @@ class  Form
 				}
 		};
 		
-		class GradeTooLowToExecuteException : public std::exception {
+		class CantExecuteExeption : public std::exception {
 			public:
 				virtual const char* what() const throw()
 				{
-					return "Exception Grade is Too Low To Signe It.";
+					return "Exception Can't execute It.";
 				}
 		};
 

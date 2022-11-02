@@ -73,6 +73,6 @@ void	ShrubberyCreationForm::execute(const Bureaucrat &x) const
     file << "                              ;%@@@@%%:;;;. " << std::endl;
     file << "                          ...;%@@@@@%%:;;;;,.." << std::endl;
     file.close();
-    std::cout << "Shrubbery Creation -> " << filename << x << std::endl;
+    std::cout << "Shrubbery Creation -> " << filename << " " << x << std::endl;
 }
 

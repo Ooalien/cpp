@@ -20,14 +20,14 @@ int main()
 {
     try
     {
-        Form *f = new PresidentialPardonForm("Home");
+        Form *f = new ShrubberyCreationForm("Home");
         Form &c = *f;
-        Bureaucrat b("lme3ti", 6);
+        Bureaucrat b("lme3ti", 5);
         std::cout << b << std::endl;
         b.signForm(*f);
         f->beSigned(b);
         std::cout << c << std::endl;
-        f->execute(b);
+        b.executeForm(c);
         delete f;
     }
     catch (std::exception &e)

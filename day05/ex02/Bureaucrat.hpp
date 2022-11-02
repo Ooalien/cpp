@@ -38,6 +38,7 @@ class  Bureaucrat
 		std::string Getname() const;
 		int			Getgrade() const;
 		void		Checkgrade();
+		void		executeForm(Form const & form);
 		
 		class GradeTooHighException : public std::exception {
 			public:

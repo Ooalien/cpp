@@ -12,12 +12,33 @@
 
 #include "AMateria.hpp"
 
-AMateria(std::string const & type)
+AMateria::AMateria(std::string const & type): type(type)
 {
     std::cout << "Constractor AMateria Called" << std::endl;
 }
 
-std::string const & getType() const
+AMateria::AMateria(const AMateria &x):type(x.type)
+{
+    std::cout << "Copy Constractor AMateria Called" << std::endl;
+}
+
+AMateria::~AMateria()
+{
+
+}
+
+AMateria    &AMateria::operator=(const AMateria &x)
+{
+    (void)x;
+    return *this;
+}
+
+std::string const &AMateria::getType() const
 {
     return (type);
+}
+
+void AMateria::use(ICharacter& target)
+{
+
 }

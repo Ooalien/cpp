@@ -21,7 +21,7 @@ int main()
 {
     Intern test;
     Bureaucrat b("lme3ti", 5);
-    Form *f = test.makeForm("robotomy request", "nothing");
+    Form *f = test.makeForm("shrubbery creation", "nothing");
     if (f)
     {
         b.signForm(*f);

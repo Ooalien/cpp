@@ -12,8 +12,8 @@
 
 
 
-#ifndef AMATERIA_HPP
-# define AMATERIA_HPP
+#ifndef ICHARACTER_HPP
+# define ICHARACTER_HPP
 
 # include <iostream>
 # include "AMateria.hpp"

@@ -18,11 +18,11 @@ int main()
     try
     {
         Form f("Certif", 10, 5);
-        Bureaucrat b("lme3ti", 11);
+        Bureaucrat b("lme3ti", 15);
         std::cout << b << std::endl;
+        b.signForm(f);
         f.beSigned(b);
         std::cout << f << std::endl;
-        b.signForm(f);
         
     }
     catch (std::exception &e)

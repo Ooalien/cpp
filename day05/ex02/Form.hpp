@@ -34,6 +34,8 @@ class  Form
 		Form(Form &x);
 		virtual ~Form();
 		
+		Form &operator=(Form &x);
+
 		std::string Getname() const;
 		int			Gettosigne() const;
 		int			Gettoexec() const;

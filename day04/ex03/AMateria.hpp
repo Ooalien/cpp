@@ -18,18 +18,18 @@
 
 class AMateria
 {
-protected:
-    std::string type;
-public:
-    AMateria(std::string const & type);
-    AMateria(const AMateria &x);
-    virtual ~AMateria();
-
-    AMateria    &operator=(const AMateria &x);
-
-    std::string const & getType() const; //Returns the materia type
-    virtual AMateria* clone() const = 0;
-    virtual void use(ICharacter& target);
+    protected:
+        std::string type;
+    public:
+        AMateria(std::string const & type);
+        AMateria(const AMateria &x);
+        virtual ~AMateria();
+    
+        AMateria    &operator=(const AMateria &x);
+    
+        std::string const & getType() const; //Returns the materia type
+        virtual AMateria* clone() const = 0;
+        virtual void use(ICharacter& target);
 };
 
 #endif

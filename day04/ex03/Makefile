@@ -6,11 +6,11 @@
 #    By: abayar <abayar@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/09/29 12:27:58 by abayar            #+#    #+#              #
-#    Updated: 2022/10/06 11:39:07 by abayar           ###   ########.fr        #
+#    Updated: 2022/11/04 08:11:20 by abayar           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-SRC = AMateria.cpp Character.cpp Cure.cpp Ice.cpp MateriaSource.cpp main.cpp
+SRC = AMateria.cpp main.cpp Character.cpp Cure.cpp Ice.cpp MateriaSource.cpp
 
 NAME = program
 

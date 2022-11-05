@@ -6,7 +6,7 @@
 /*   By: abayar <abayar@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/15 13:57:09 by abayar            #+#    #+#             */
-/*   Updated: 2022/10/15 14:00:07 by abayar           ###   ########.fr       */
+/*   Updated: 2022/11/04 08:10:19 by abayar           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,8 @@
 
 # include <iostream>
 # include "AMateria.hpp"
+
+class AMateria;
 
 class ICharacter
 {

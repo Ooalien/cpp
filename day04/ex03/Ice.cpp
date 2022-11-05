@@ -4,23 +4,23 @@
 
 Ice::Ice():AMateria("ice")
 {
-    std::cout << "Constractor Ice called." << std::endl;
+    // std::cout << "Constractor Ice called." << std::endl;
 }
 
-Ice::Ice(const Ice &x):AMateria("ice")
+Ice::Ice(const Ice &x):AMateria(x.type)
 {
-    std::cout << "Copy Constractor Ice called." << std::endl;
+    // std::cout << "Copy Constractor Ice called." << std::endl;
 }
 
 Ice::~Ice()
 {
-    std::cout << "Destractor Ice called." << std::endl;
+    // std::cout << "Destractor Ice called." << std::endl;
 }
 
 Ice &Ice::operator=(const Ice &x)
 {
     this->type = x.getType();
-    std::cout << "Copy assignement opertor called." << std::endl;
+    // std::cout << "Copy assignement opertor called." << std::endl;
     return *this;
 }
 

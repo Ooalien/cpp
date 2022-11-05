@@ -6,7 +6,7 @@
 /*   By: abayar <abayar@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/15 13:57:12 by abayar            #+#    #+#             */
-/*   Updated: 2022/10/15 14:00:04 by abayar           ###   ########.fr       */
+/*   Updated: 2022/11/04 08:10:42 by abayar           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,8 @@
 
 # include <iostream>
 # include "ICharacter.hpp"
+
+class ICharacter;
 
 class AMateria
 {
@@ -29,7 +31,7 @@ class AMateria
     
         std::string const & getType() const; //Returns the materia type
         virtual AMateria* clone() const = 0;
-        virtual void use(ICharacter& target);
+        virtual void use(ICharacter& target) = 0;
 };
 
 #endif

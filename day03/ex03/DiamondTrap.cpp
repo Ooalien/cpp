@@ -47,3 +47,12 @@ void        DiamondTrap::attack(const std::string& target) const
 {
     ScavTrap::attack(target);
 }
+
+DiamondTrap    &DiamondTrap::operator=(const DiamondTrap &x)
+{
+    this->attack_d = x.attack_d;
+    this->name = x.name;
+    this->energy_p = x.energy_p;
+    this->hit_point = x.hit_point;
+    return *this;
+}

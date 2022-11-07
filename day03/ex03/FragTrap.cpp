@@ -40,3 +40,12 @@ void    FragTrap::highFivesGuys( void )
 {
     std::cout << "Give me high fives Guys!!" << std::endl;
 }
+
+FragTrap    &FragTrap::operator=(const FragTrap &x)
+{
+    this->attack_d = x.attack_d;
+    this->name = x.name;
+    this->energy_p = x.energy_p;
+    this->hit_point = x.hit_point;
+    return *this;
+}

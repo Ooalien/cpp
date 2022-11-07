@@ -67,3 +67,12 @@ void ClapTrap::beRepaired(unsigned int amount)
             std::cout << "ClapTrap " << this->getname() << " get " << amount << " heal point!" << std::endl; 
     }
 }
+
+ClapTrap    &ClapTrap::operator=(const ClapTrap &x)
+{
+    this->attack_d = x.attack_d;
+    this->energy_p = x.energy_p;
+    this->hit_point = x.hit_point;
+    this->name = x.name;
+    return *this;
+}

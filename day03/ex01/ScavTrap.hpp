@@ -13,6 +13,8 @@ class ScavTrap : public ClapTrap
 
         std::string getname();
 
+        ScavTrap    &operator=(const ScavTrap &x);
+
         void        attack(const std::string& target);
         void        guardGate( void );
 

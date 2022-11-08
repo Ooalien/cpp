@@ -7,6 +7,7 @@
 class ScavTrap : virtual public ClapTrap
 {
     public:
+        ScavTrap( void );
         ScavTrap( std::string name );
         ScavTrap(const ScavTrap &cl);
         ~ScavTrap( void );
@@ -18,8 +19,6 @@ class ScavTrap : virtual public ClapTrap
         void        attack(const std::string& target) const;
         void        guardGate( void );
 
-    protected:
-        ScavTrap( void );
 } ;
 
 #endif

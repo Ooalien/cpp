@@ -9,6 +9,7 @@
 class DiamondTrap : public ScavTrap , public FragTrap
 {
     public:
+        DiamondTrap( void );
         DiamondTrap( std::string name );
         DiamondTrap(const DiamondTrap &cl);
         ~DiamondTrap( void );
@@ -22,7 +23,6 @@ class DiamondTrap : public ScavTrap , public FragTrap
         void        attack(const std::string& target) const;
     private:
         std::string name;
-        DiamondTrap( void );
 } ;
 
 #endif

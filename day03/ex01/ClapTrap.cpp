@@ -8,9 +8,9 @@ ClapTrap::ClapTrap( void )
 ClapTrap::ClapTrap( std::string name )
 {
     this->name = name;
-    this->hit_point = 10;
-    this->energy_p = 10;
-    this->attack_d = 0;
+    this->hit_point = 100;
+    this->energy_p = 50;
+    this->attack_d = 20;
     this->max_p = this->hit_point;
     std::cout << "Name constractor called\n";
 }

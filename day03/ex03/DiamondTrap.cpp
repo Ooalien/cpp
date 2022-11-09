@@ -4,21 +4,24 @@ DiamondTrap::DiamondTrap( void )
 {
     ClapTrap::name = "_clap_name";
     this->name = "";
-    this->hit_point = 100;
-    this->energy_p = 50;
-    this->attack_d = 30;
+    this->hit_point = FragTrap::hit_point;
+    this->energy_p = ScavTrap::energy_p;
+    this->attack_d = FragTrap::attack_d;
     this->max_p = this-> energy_p;
     std::cout << "Default constractor for DiamondTrap called\n";
 }
 
 DiamondTrap::DiamondTrap( std::string name )
 {
+    ScavTrap s;
     ClapTrap::name = name + "_clap_name";
     this->name = name;
-    this->hit_point = 100;
-    this->energy_p = 50;
-    this->attack_d = 30;
-    this->max_p = this-> energy_p;
+    this->hit_point = FragTrap::hit_point;
+    this->energy_p = s.getenergy();
+    this->attack_d = FragTrap::attack_d;
+    std::cout << s.getenergy() << std::endl;
+    // std::cout << FragTrap::energy_p << std::endl;
+    // this->max_p = this->energy_p;
     std::cout << "Name constractor for DiamondTrap called\n";
 }
 

@@ -44,3 +44,8 @@ ScavTrap    &ScavTrap::operator=(const ScavTrap &x)
     this->hit_point = x.hit_point;
     return *this;
 }
+
+int         ScavTrap::getenergy()
+{
+    return this->energy_p;
+}

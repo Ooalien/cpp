@@ -8,7 +8,7 @@ int main()
     ScavTrap ali("ali");
     ClapTrap meki("meki"); 
 
-	Frag.attack("babak");
+	Frag.attack("nta");
 	Frag.takeDamage(6);
 	Frag.beRepaired(4);
 	Frag.highFivesGuys();

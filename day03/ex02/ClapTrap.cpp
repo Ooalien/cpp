@@ -2,6 +2,11 @@
 
 ClapTrap::ClapTrap( void )
 {
+    this->name = "";
+    this->hit_point = 10;
+    this->energy_p = 10;
+    this->attack_d = 0;
+    this->max_p = this->hit_point;
     std::cout << "Default constractor called\n";
 }
 

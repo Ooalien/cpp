@@ -6,7 +6,7 @@
 /*   By: abayar <abayar@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/22 09:56:35 by abayar            #+#    #+#             */
-/*   Updated: 2022/09/22 09:56:36 by abayar           ###   ########.fr       */
+/*   Updated: 2022/11/08 16:15:47 by abayar           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ Fixed::Fixed(void)
     this->fixvalue = 0;
 }
 
-Fixed::Fixed(Fixed &fix)
+Fixed::Fixed(const Fixed &fix)
 {
     std::cout << "Copy constructor called" << std::endl;
     this->fixvalue = fix.getRawBits();

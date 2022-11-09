@@ -2,6 +2,11 @@
 
 FragTrap::FragTrap( void )
 {
+    this->name = "";
+    this->hit_point = 100;
+    this->energy_p = 100;
+    this->attack_d = 30;
+    this->max_p = this-> energy_p;
     std::cout << "Default constractor for FragTrap called\n";
 }
 

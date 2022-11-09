@@ -8,10 +8,6 @@ ScavTrap::ScavTrap( void )
 ScavTrap::ScavTrap( std::string name )
 {
     this->name = name;
-    this->hit_point = 100;
-    this->energy_p = 50;
-    this->attack_d = 20;
-    this->max_p = this-> energy_p;
     std::cout << "Name constractor for ScavTrap called\n";
 }
 

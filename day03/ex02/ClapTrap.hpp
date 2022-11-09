@@ -6,6 +6,7 @@
 class ClapTrap
 {
     public:
+        ClapTrap( void );
         ClapTrap( std::string name );
         ClapTrap(const ClapTrap &cl);
         ~ClapTrap( void );
@@ -22,7 +23,6 @@ class ClapTrap
         int         energy_p;
         int         attack_d;
         int         max_p;
-        ClapTrap( void );
 } ;
 
 #endif

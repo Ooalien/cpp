@@ -6,7 +6,7 @@
 /*   By: abayar <abayar@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/15 14:01:51 by abayar            #+#    #+#             */
-/*   Updated: 2022/11/04 08:12:54 by abayar           ###   ########.fr       */
+/*   Updated: 2022/11/08 11:55:33 by abayar           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ AMateria::~AMateria()
 
 AMateria    &AMateria::operator=(const AMateria &x)
 {
-    (void)x;
+    this->type = x.type;
     return *this;
 }
 

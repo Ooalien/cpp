@@ -2,15 +2,20 @@
 
 ClapTrap::ClapTrap( void )
 {
+    this->name = "";
+    this->hit_point = 100;
+    this->energy_p = 50;
+    this->attack_d = 20;
+    this->max_p = this->hit_point;
     std::cout << "Default constractor called\n";
 }
 
 ClapTrap::ClapTrap( std::string name )
 {
     this->name = name;
-    this->hit_point = 10;
-    this->energy_p = 10;
-    this->attack_d = 0;
+    this->hit_point = 100;
+    this->energy_p = 50;
+    this->attack_d = 20;
     this->max_p = this->hit_point;
     std::cout << "Name constractor called\n";
 }
@@ -46,7 +51,7 @@ void ClapTrap::takeDamage(unsigned int amount)
     if (this->hit_point <= 0)
     {
         std::cout << "ClapTrap " << this->getname() << " take " << amount << " dammage point!" << std::endl;
-        std::cout << "He's energy point is 0, and he's dead\n";
+        std::cout << "He's hit point is 0, and he's dead\n";
     }
     else
         std::cout << "ClapTrap " << this->getname() << " take " << amount << " dammage point!" << std::endl; 
@@ -61,7 +66,7 @@ void ClapTrap::beRepaired(unsigned int amount)
         if (this->hit_point >= this->max_p)
         {
             std::cout << "ClapTrap " << this->getname() << " get " << amount << " heal point!" << std::endl;
-            std::cout << "He's energy point is max\n";
+            std::cout << "He's hit point is max\n";
         } 
         else
             std::cout << "ClapTrap " << this->getname() << " get " << amount << " heal point!" << std::endl; 

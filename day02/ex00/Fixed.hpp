@@ -6,7 +6,7 @@
 /*   By: abayar <abayar@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/22 09:56:32 by abayar            #+#    #+#             */
-/*   Updated: 2022/09/22 09:56:33 by abayar           ###   ########.fr       */
+/*   Updated: 2022/11/08 16:14:52 by abayar           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ class Fixed
 {
     public :
         Fixed(void);
-        Fixed(Fixed &Fix);
+        Fixed(const Fixed &Fix);
         ~Fixed(void);
         Fixed   &operator=(Fixed const &cpy);
         int     getRawBits( void ) const;

@@ -6,7 +6,7 @@
 /*   By: abayar <abayar@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/29 12:32:54 by abayar            #+#    #+#             */
-/*   Updated: 2022/10/07 16:28:19 by abayar           ###   ########.fr       */
+/*   Updated: 2022/11/10 12:47:28 by abayar           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,17 +46,11 @@ Dog::~Dog()
     delete br;
 }
 
-Animal &Dog::operator=(Animal const &x)
-{
-    this->type = x.getType();
-    std::cout << "Copy assignement operator for Animal called." << std::endl;
-    return (*this);
-}
-
 Dog		&Dog::operator=( Dog const &dogo )
 {
-	std::cout << "Assignement operator for Dog called" << std::endl;
-	this->type = dogo.getType();
-	*(this->br) = *(dogo.GetBrain());
-	return *this;
+   this->type = dogo.getType();
+   this->br = new Brain();
+   for (int i = 0; i < 100; i++)
+        this->br[i] = dogo.GetBrain()[i];
+    return *this;
 }

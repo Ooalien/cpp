@@ -6,7 +6,7 @@
 /*   By: abayar <abayar@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/29 12:32:54 by abayar            #+#    #+#             */
-/*   Updated: 2022/09/29 19:32:04 by abayar           ###   ########.fr       */
+/*   Updated: 2022/11/10 12:07:23 by abayar           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,4 +32,10 @@ void    Dog::makeSound(void) const
 Dog::~Dog()
 {
     std::cout << "Destractor for Dog called." << std::endl;
+}
+
+Dog &Dog::operator=(Dog const &x)
+{
+    this->type = x.getType();
+    return *this;
 }

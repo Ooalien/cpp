@@ -6,7 +6,7 @@
 /*   By: abayar <abayar@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/29 12:41:17 by abayar            #+#    #+#             */
-/*   Updated: 2022/10/06 12:04:44 by abayar           ###   ########.fr       */
+/*   Updated: 2022/11/10 12:48:20 by abayar           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,9 +45,6 @@ int main()
         std::cout << t[i]->GetBrain()->ideas[4] << std::endl;
     }
     for (int i = 0 ; i < 8; i++)
-    {
         delete t[i];
-    }
-
     return 0;
 }

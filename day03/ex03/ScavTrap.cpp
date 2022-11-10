@@ -27,10 +27,10 @@ std::string ScavTrap::getname()
     return this->name;
 }
 
-void ScavTrap::attack(const std::string& target) const
-{
-    std::cout << "ScavTrap " << this->name << " attacks " << target << ", causing " << this->attack_d <<  " points of damage!" << std::endl;
-}
+// void ScavTrap::attack(const std::string& target) const
+// {
+//     std::cout << "ScavTrap " << this->name << " attacks " << target << ", causing " << this->attack_d <<  " points of damage!" << std::endl;
+// }
 void		ScavTrap::guardGate( void )
 {
 	std::cout << "ScavTrap " << this->name << " entered Gate Keeper mode!" << std::endl;

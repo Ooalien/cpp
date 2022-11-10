@@ -6,7 +6,7 @@
 /*   By: abayar <abayar@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/29 12:32:58 by abayar            #+#    #+#             */
-/*   Updated: 2022/10/06 12:03:50 by abayar           ###   ########.fr       */
+/*   Updated: 2022/11/10 12:44:28 by abayar           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,17 +46,11 @@ void    Cat::makeSound(void) const
     std::cout << "Meaw Meaw...!" << std::endl;
 }
 
-Animal &Cat::operator=(Animal const &x)
-{
-    this->type = x.getType();
-    std::cout << "Copy assignement operator for Animal called." << std::endl;
-    return (*this);
-}
-
 Cat		&Cat::operator=( Cat const &cat )
 {
-	std::cout << "Assignement operator for Cat called" << std::endl;
-	this->type = cat.getType();
-	*(this->br) = *(cat.GetBrain());
-	return *this;
+   this->type = cat.getType();
+   this->br = new Brain();
+   for (int i = 0; i < 100; i++)
+        this->br[i] = cat.GetBrain()[i];
+    return *this;
 }

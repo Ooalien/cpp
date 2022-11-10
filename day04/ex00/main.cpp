@@ -6,7 +6,7 @@
 /*   By: abayar <abayar@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/29 12:41:17 by abayar            #+#    #+#             */
-/*   Updated: 2022/09/29 19:31:25 by abayar           ###   ########.fr       */
+/*   Updated: 2022/11/10 12:18:04 by abayar           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ int main()
     std::cout << j->getType() << " " << std::endl;
     std::cout << i->getType() << " " << std::endl;
     i->makeSound(); //will output the cat sound!
-    i2->makeSound(); //will output the cat sound!
+    i2->makeSound();
     j->makeSound();
     meta->makeSound();
     meta2->makeSound();

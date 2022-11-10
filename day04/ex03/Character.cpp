@@ -17,7 +17,15 @@ Character::Character(const std::string &x)
 
 Character::Character(const Character &x)
 {
-    *this = x;
+    for(int i = 0;i < 4; i++)
+    {
+        if (this->inv[i])
+            delete this->inv[i];
+        this->inv[i] = x.inv[i];
+        if (this->inv[i])
+            this->mn++;
+    }
+    this->name = x.getName();
     // std::cout << "Copy Constractor Called." << std::endl;
 }
 
@@ -67,7 +75,7 @@ void                Character::unequip(int idx)
 {
     int i = idx;
 
-    if (idx >= 0 && idx <= 3)
+    if (idx >= 0 && idx <= 3 && this->inv[idx])
     {
         i++;
         for(; ((i < 4) && this->inv[i]);i++)

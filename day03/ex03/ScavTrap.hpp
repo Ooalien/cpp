@@ -18,6 +18,7 @@ class ScavTrap : virtual public ClapTrap
 
         void        attack(const std::string& target) const;
         void        guardGate( void );
+        static      const int   energy_pp = 50;
 
 } ;
 

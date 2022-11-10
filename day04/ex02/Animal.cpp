@@ -6,7 +6,7 @@
 /*   By: abayar <abayar@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/29 12:10:44 by abayar            #+#    #+#             */
-/*   Updated: 2022/10/07 16:28:43 by abayar           ###   ########.fr       */
+/*   Updated: 2022/11/10 12:38:35 by abayar           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,4 +32,11 @@ std::string Animal::getType(void) const
 Animal::~Animal()
 {
     std::cout << "Destractor for Animal called." << std::endl;
+}
+
+Animal &Animal::operator=(Animal const &x)
+{
+    this->type = x.getType();
+    std::cout << "Copy assignement operator for Animal called." << std::endl;
+    return (*this);
 }

@@ -6,7 +6,7 @@
 /*   By: abayar <abayar@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/29 12:28:33 by abayar            #+#    #+#             */
-/*   Updated: 2022/10/06 11:57:19 by abayar           ###   ########.fr       */
+/*   Updated: 2022/11/10 12:47:03 by abayar           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,6 @@ class Dog : public Animal {
         virtual void    makeSound(void) const;
         virtual Brain *GetBrain() const;
         virtual void setBrain(Brain * br);
-        virtual Animal &operator=(Animal const &x);
         Dog		&operator=( Dog const &cat );
         
     private:

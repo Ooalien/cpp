@@ -34,3 +34,12 @@ void    WrongCat::makeSound(void) const
 {
     std::cout << "Meaw Meaw...!" << std::endl;
 }
+
+WrongCat &WrongCat::operator=(WrongCat const &x)
+{
+    WrongCat res;
+
+    this->type = x.getType();
+    std::cout << "Copy assignement operator for WrongCat called." << std::endl;
+    return (*this);
+}

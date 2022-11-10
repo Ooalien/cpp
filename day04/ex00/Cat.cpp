@@ -6,7 +6,7 @@
 /*   By: abayar <abayar@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/29 12:32:58 by abayar            #+#    #+#             */
-/*   Updated: 2022/09/29 19:32:41 by abayar           ###   ########.fr       */
+/*   Updated: 2022/11/10 12:07:01 by abayar           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,4 +33,10 @@ Cat::~Cat()
 void    Cat::makeSound(void) const
 {
     std::cout << "Meaw Meaw...!" << std::endl;
+}
+
+Cat &Cat::operator=(Cat const &x)
+{
+    this->type = x.getType();
+    return *this;
 }

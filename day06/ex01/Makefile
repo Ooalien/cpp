@@ -1,8 +1,8 @@
-SRC = ClapTrap.cpp main.cpp
+SRC = main.cpp
 
 NAME = program
 
-FLAGS = g++ -Wall -Wextra -Werror -std=c++98
+FLAGS = g++ -std=c++98 -Wall -Wextra -Werror
 
 all : ${NAME}
 

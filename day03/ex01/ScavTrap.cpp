@@ -2,6 +2,7 @@
 
 ScavTrap::ScavTrap( void )
 {
+    this->name = "";
     std::cout << "Default constractor for ScavTrap called\n";
 }
 

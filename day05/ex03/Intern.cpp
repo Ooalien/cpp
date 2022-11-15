@@ -45,8 +45,8 @@ Form		*Intern::makeForm(const std::string &fname, const std::string &target)
             delete formlist[i].target;
     }
     if (rs != NULL)
-        std::cout << "Intern creates" << fname << std::endl;
+        std::cout << "Intern creates " << fname << std::endl;
     else
-        std::cout << "Intern couldn't creat the form " << fname << std::endl;
+        throw FailCreationForm();
     return rs;
 }

@@ -15,6 +15,14 @@ class Intern
 
 		Form		*makeForm(const std::string &fname, const std::string &target);
 
+		class FailCreationForm : public std::exception {
+			public:
+				virtual const char* what() const throw()
+				{
+					return "Intern couldn't creat the form.";
+				}
+		};
+
 	private:
 		typedef struct formlist
 		{

@@ -6,7 +6,7 @@
 /*   By: abayar <abayar@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/21 14:44:14 by abayar            #+#    #+#             */
-/*   Updated: 2022/10/27 16:04:13 by abayar           ###   ########.fr       */
+/*   Updated: 2022/11/14 11:34:02 by abayar           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,6 +70,13 @@ class  Form
 				}
 		};
 
+		class GradeTooLowToSigneException : public std::exception {
+			public:
+				virtual const char* what() const throw()
+				{
+					return "Exception Grade is Too Low To Signe It.";
+				}
+		};
 
 } ;
 

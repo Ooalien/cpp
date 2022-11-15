@@ -6,7 +6,7 @@
 /*   By: abayar <abayar@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/21 14:44:16 by abayar            #+#    #+#             */
-/*   Updated: 2022/10/27 16:04:10 by abayar           ###   ########.fr       */
+/*   Updated: 2022/11/14 11:32:57 by abayar           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,10 +68,14 @@ bool	Form::Getissigne() const
 void	Form::beSigned(Bureaucrat x)
 {
 	if (x.Getgrade() > this->Gettosigne())
+	{
 		is_signed = false;
+		throw GradeTooLowToSigneException();
+	}
 	else
 		is_signed = true;
 }
+
 
 void	Form::Checkexec(const Bureaucrat &x) const
 {

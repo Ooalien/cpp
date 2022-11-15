@@ -6,7 +6,7 @@
 /*   By: abayar <abayar@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/15 15:55:11 by abayar            #+#    #+#             */
-/*   Updated: 2022/10/27 14:50:17 by abayar           ###   ########.fr       */
+/*   Updated: 2022/11/14 11:29:13 by abayar           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ int main()
     {
         Form *f = new ShrubberyCreationForm("Home");
         Form &c = *f;
-        Bureaucrat b("lme3ti", 5);
+        Bureaucrat b("lme3ti", 137);
         std::cout << b << std::endl;
         b.signForm(*f);
         f->beSigned(b);
@@ -33,7 +33,6 @@ int main()
     catch (std::exception &e)
     {
         std::cout << e.what() << std::endl;
-        while(1);
     }
     return 0;
 }

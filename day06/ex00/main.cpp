@@ -4,6 +4,35 @@ int     Checkifdigit(std::string &c)
 {
     for (int i = 0; c[i];i++)
     {
+        if (c[0] == '-')
+            continue;
+        if (!isdigit(c[i]))
+            return 0;
+    }
+    return (1);
+}
+
+int     Checkiffloat(std::string c)
+{
+    c.erase(c.find("."), 1);
+    c.erase(c.length() - 1, 1);
+    for (int i = 0; c[i];i++)
+    {
+        if (c[0] == '-')
+            continue;
+        if (!isdigit(c[i]))
+            return 0;
+    }
+    return (1);
+}
+
+int     Checkifdouble(std::string c)
+{
+    c.erase(c.find("."), 1);
+    for (int i = 0; c[i];i++)
+    {
+        if (c[0] == '-')
+            continue;
         if (!isdigit(c[i]))
             return 0;
     }
@@ -35,7 +64,7 @@ void    my_printer(void)
 
 void    my_printer(int x)
 {
-    if (static_cast<char>(x) > 31)
+    if (static_cast<char>(x) > 31 && static_cast<char>(x) < 127)
         std::cout << "char: '" << static_cast<char>(x) << "'" << std::endl;
     else
         std::cout << "char: Non displayable" << std::endl;
@@ -43,25 +72,27 @@ void    my_printer(int x)
     std::cout << "float: " << static_cast<float>(x) << ff() << std::endl;
     std::cout << "double: " << static_cast<double>(x) << dd() << std::endl;
 }
+
 void    my_printer(float x)
 {
-    if (static_cast<char>(x) > 31)
+    if (static_cast<char>(x) > 31 && static_cast<char>(x) < 127)
         std::cout << "char: '" << static_cast<char>(x) << "'" << std::endl;
     else
         std::cout << "char: Non displayable" << std::endl;
     std::cout << "int: " << static_cast<int>(x) << std::endl;
-    std::cout << "float: " << static_cast<float>(x) << fff() << std::endl;
-    std::cout << "double: " << static_cast<double>(x) << std::endl;
+    std::cout << "float: " << static_cast<float>(x) << ((x == (int)x)?ff():fff()) << std::endl;
+    std::cout << "double: " << static_cast<double>(x) << ((x == (int)x)?dd():"")  << std::endl;
 }
+
 void    my_printer(double x)
 {
-    if (static_cast<char>(x) > 31)
+    if (static_cast<char>(x) > 31 && static_cast<char>(x) < 127)
         std::cout << "char: '" << static_cast<char>(x) << "'" << std::endl;
     else
         std::cout << "char: Non displayable" << std::endl;
     std::cout << "int: " << static_cast<int>(x) << std::endl;
-    std::cout << "float: " << static_cast<float>(x) << fff() << std::endl;
-    std::cout << "double: " << static_cast<double>(x) << std::endl;
+    std::cout << "float: " << static_cast<float>(x) << ((x == (int)x)?ff():fff()) << std::endl;
+    std::cout << "double: " << static_cast<double>(x) << ((x == (int)x)?dd():"") << std::endl;
 }
 
 int main(int ac, char **av)
@@ -74,13 +105,13 @@ int main(int ac, char **av)
     if (ac == 2)
     {
         std::string s(av[1]);
-        if (s[s.length() - 1] == 'f' && s.find(".") < s.length())
+        if (s[s.length() - 1] == 'f' && s.find(".") < s.length() && Checkiffloat(s))
         {
             std::cout << "*  float  *" <<std::endl;
             f = stof(s);
             flag = 1;
         }
-        else if (s.find(".") < s.length())
+        else if (s.find(".") < s.length() && Checkifdouble(s))
         {
             std::cout << "*  double  *" <<std::endl;
             d = stof(s);

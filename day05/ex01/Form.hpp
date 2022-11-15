@@ -6,7 +6,7 @@
 /*   By: abayar <abayar@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/21 14:44:14 by abayar            #+#    #+#             */
-/*   Updated: 2022/10/27 16:04:13 by abayar           ###   ########.fr       */
+/*   Updated: 2022/11/14 10:56:57 by abayar           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,11 +31,7 @@ class  Form
 		Form(Form &x);
 		~Form();
 		
-		Form &operator=(Form &x);
-		Form &operator++();
-		Form &operator--();
-		Form operator++(int);
-		Form operator--(int);
+		Form		&operator=(Form &x);
 
 		std::string Getname() const;
 		int			Gettosigne() const;

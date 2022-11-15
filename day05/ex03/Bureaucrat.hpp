@@ -6,7 +6,7 @@
 /*   By: abayar <abayar@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/15 15:55:49 by abayar            #+#    #+#             */
-/*   Updated: 2022/10/27 14:31:08 by abayar           ###   ########.fr       */
+/*   Updated: 2022/11/14 11:32:04 by abayar           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ class Form;
 class  Bureaucrat
 {
 	private :
-		std::string   name;
+		const std::string   name;
 		int           grade;
 	public  :
 		Bureaucrat(const std::string x, int n);

@@ -6,7 +6,7 @@
 /*   By: abayar <abayar@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/15 15:55:46 by abayar            #+#    #+#             */
-/*   Updated: 2022/10/27 14:44:40 by abayar           ###   ########.fr       */
+/*   Updated: 2022/11/14 11:06:04 by abayar           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,8 +91,8 @@ Bureaucrat Bureaucrat::operator--(int)
 
 void		Bureaucrat::signForm(Form &x)
 {
-    if (this->Getgrade() <= x.Gettosigne())
+    if (x.Getissigne())
         std::cout << this->name << " signed " << x.Getname() << std::endl;
     else
-        std::cout << this->name << " couldn't  sign " << x.Getname() << " because Grade is too low" << std::endl;   
+        std::cout << this->name << " couldn't  sign " << x.Getname() << " because Grade is too low please use beSgined member function!" << std::endl;   
 }

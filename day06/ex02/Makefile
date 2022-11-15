@@ -1,8 +1,8 @@
 SRC = main.cpp
 
-NAME = convert
+NAME = program
 
-FLAGS = g++ -Wall -Wextra -Werror -std=c++98
+FLAGS = g++ -std=c++98 -Wall -Wextra -Werror
 
 all : ${NAME}
 

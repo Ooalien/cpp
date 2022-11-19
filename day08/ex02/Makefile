@@ -1,6 +1,6 @@
-SRC = main.cpp Span.cpp
+SRC = main.cpp
 
-NAME = ex01
+NAME = ex02
 
 FLAGS = c++ -std=c++98 -Wall -Wextra -Werror
 

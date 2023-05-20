@@ -18,6 +18,7 @@ int main( void ) {
     const Fixed a;
     const Fixed b( a );
     const Fixed c;
+
     c = b;
     std::cout << a.getRawBits() << std::endl;
     std::cout << b.getRawBits() << std::endl;

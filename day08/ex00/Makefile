@@ -1,6 +1,6 @@
 SRC = main.cpp
 
-NAME = program
+NAME = ex00
 
 FLAGS = c++ -std=c++98 -Wall -Wextra -Werror
 

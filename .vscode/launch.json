@@ -8,8 +8,8 @@
             "type": "lldb",
             "request": "launch",
             "name": "Debug",
-            "program": "/Users/abayar/Desktop/cpp/day06/ex00/program",
-            "args": ["12.dfs1ff"],
+            "program": "/Users/abayar/Desktop/cpp/day08/ex01/program",
+            "args": [],
             "cwd": "${workspaceFolder}"
         }
     ]

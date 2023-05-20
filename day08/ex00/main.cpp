@@ -14,7 +14,7 @@ int main()
     vec.push_back(-42);
     try
     {
-        std::vector<int>::iterator find = easyfind< std::vector<int> >(vec, -42);
+        std::vector<int>::iterator find = easyfind< std::vector<int> >(vec, 1337);
         std::cout << *find << std::endl;    
     }
     catch(std::exception &e)

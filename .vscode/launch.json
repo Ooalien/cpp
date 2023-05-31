@@ -8,8 +8,8 @@
             "type": "lldb",
             "request": "launch",
             "name": "Debug",
-            "program": "/Users/abayar/Desktop/cpp/day08/ex01/program",
-            "args": [],
+            "program": "/Users/abayar/Desktop/cpp/day09/ex02/PmergeMe",
+            "args": ["12", "53"],
             "cwd": "${workspaceFolder}"
         }
     ]

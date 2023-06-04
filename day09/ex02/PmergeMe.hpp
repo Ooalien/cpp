@@ -4,7 +4,8 @@
 #include <sstream>
 #include <list>
 #include <deque>
-
+#include <ctime>
+#include <sys/time.h>
 
 class PmergeMe
 {
@@ -17,10 +18,11 @@ public:
     PmergeMe(PmergeMe &) {}
     ~PmergeMe() {}
 
-    PmergeMe            &operator=(PmergeMe &);
+    PmergeMe &operator=(PmergeMe &);
 
-    std::list<int>      getlist();
-    std::deque<int>     getdeque();
+    std::list<int> getlist();
+    std::deque<int> getdeque();
 
-    void                parser(char **av);
+    void parser(char **av);
+    void print(double, double);
 };

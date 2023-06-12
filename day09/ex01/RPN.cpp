@@ -14,13 +14,24 @@ bool RPN::checknumber(char c)
 
 RPN::RPN(std::string &x)
 {
-    std::istringstream ss(x);
     std::string tmp;
     int i;
     int r;
 
     i = 0;
     r = 0;
+    std::string tmp1;
+    for (size_t i = 0; i < x.size(); i++)
+    {
+        if (i > 0)
+        {
+            if (x[i] != ' ' && x[i - 1] != ' ')
+                tmp1.push_back(' ');
+        }
+        tmp1.push_back(x[i]);
+    }
+    x = tmp1;
+    std::istringstream ss(x);
     while (ss >> tmp)
     {
         if (!checknumber(tmp[0]) && (i == 0 || i == 1))
@@ -56,11 +67,23 @@ RPN::RPN(std::string &x)
         }
         else if (tmp[0] == '/' && s.size() >= 2)
         {
+            // try
+            // {
             r = s.top();
             s.pop();
+            if (r == 0)
+            {
+                std::cerr << "Error: can't devide by zero." << std::endl;
+                exit(0);
+            }
             r = s.top() / r;
             s.pop();
             s.push(r);
+            // }
+            // catch (std::exception &e)
+            // {
+            //     std::cout << e.what() << std::endl;
+            // }
         }
         i++;
     }

@@ -65,27 +65,27 @@ int check_date(std::string s)
 {
     if (std::count(s.begin(), s.end(), '-') != 2 || s.size() != 10)
     {
-        std::cout << "Error: bad date." << std::endl;
+        std::cout << "Error: invalid date." << std::endl;
         return 0;
     }
     if (s.find("-") != 4 || s[7] != '-' || !isNumber(s.substr(0, 4)) || !isNumber(s.substr(5, 2)) || !isNumber(s.substr(8, 2)))
     {
-        std::cout << "Error: bad date." << std::endl;
+        std::cout << "Error: invalid date." << std::endl;
         return 0;
     }
     if (std::stoi(s.substr(0, 4)) > 2023 || std::stoi(s.substr(0, 4)) <= 2000)
     {
-        std::cout << "Error: bad date." << std::endl;
+        std::cout << "Error: invalid date." << std::endl;
         return 0;
     }
     if (std::stoi(s.substr(5, 2)) > 12 || std::stoi(s.substr(5, 2)) < 01)
     {
-        std::cout << "Error: bad date." << std::endl;
+        std::cout << "Error: invalid date." << std::endl;
         return 0;
     }
     if (std::stoi(s.substr(8, 2)) > 31 || std::stoi(s.substr(8, 2)) < 01)
     {
-        std::cout << "Error: bad date." << std::endl;
+        std::cout << "Error: invalid date." << std::endl;
         return 0;
     }
     return 1;
@@ -106,16 +106,10 @@ void BitcoinExchange::handle_input(std::ifstream &f)
         std::string date;
         float v;
         std::string value;
+        std::string p;
         std::istringstream ss(tmp);
         ss >> date;
-        if (check_date(date) == 0)
-            continue;
-        ss >> value;
-        if (value != "|" || !check_input(tmp))
-        {
-            std::cout << "Error: bad input." << std::endl;
-            continue;
-        }
+        ss >> p;
         ss >> value;
 
         if (date.empty() || value.empty())
@@ -123,11 +117,18 @@ void BitcoinExchange::handle_input(std::ifstream &f)
             std::cout << "Error: bad input => " << date << value << std::endl;
             continue;
         }
+        if (p != "|" || !check_input(tmp))
+        {
+            std::cout << "Error: bad input." << std::endl;
+            continue;
+        }
         else if (value[0] == '-')
         {
             std::cout << "Error: not a positive number." << std::endl;
             continue;
         }
+        if (check_date(date) == 0)
+            continue;
         if (std::count(value.begin(), value.end(), '.') > 1)
         {
             std::cout << "Error: invalid value." << std::endl;

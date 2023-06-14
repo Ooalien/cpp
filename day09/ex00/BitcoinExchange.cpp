@@ -122,6 +122,10 @@ void BitcoinExchange::handle_input(std::ifstream &f)
             std::cout << "Error: bad input." << std::endl;
             continue;
         }
+        if (value.find(",") != std::string::npos)
+        {
+            value.replace(value.find(","), 1, ".");
+        }
         else if (value[0] == '-')
         {
             std::cout << "Error: not a positive number." << std::endl;
@@ -132,6 +136,17 @@ void BitcoinExchange::handle_input(std::ifstream &f)
         if (std::count(value.begin(), value.end(), '.') > 1)
         {
             std::cout << "Error: invalid value." << std::endl;
+            continue;
+        }
+        else if (value[0] == '.' || value[value.size() - 1] == '.')
+        {
+            std::cout << "Error: invalid value." << std::endl;
+            continue;
+        }
+        std::string tm = value;
+        if (!isNumber((value.find(".") != std::string::npos ? tm.erase(value.find("."), 1) : value )))
+        {
+            std::cout << "Error: bad input." << std::endl;
             continue;
         }
         try
